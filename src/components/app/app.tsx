@@ -1,12 +1,13 @@
 import MainPage from '../../pages/main-page/main-page';
-import type { FilmCard } from '../../types';
+import type { FilmCard, MainFim } from '../../types';
 
 type AppProps = {
-    filmCards: FilmCard[];
-  }
+  mainFilm: MainFim;
+  filmCards: FilmCard[];
+};
 
-function App({filmCards}: AppProps): JSX.Element {
-  return <MainPage filmCards={filmCards}/>;
+function App({ mainFilm, filmCards }: AppProps): JSX.Element {
+  return <MainPage mainFilm={mainFilm} filmCards={filmCards} />;
 }
 
 export default App;

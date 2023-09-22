@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import data from './data.json';
+import { mainFilm, filmCards } from './data.json';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,6 +9,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App filmCards={data.filmCards} />
+    <App mainFilm={mainFilm} filmCards={filmCards} />
   </React.StrictMode>
 );
