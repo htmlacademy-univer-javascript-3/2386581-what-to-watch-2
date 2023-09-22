@@ -1,0 +1,109 @@
+{
+  "filmCards": [
+    {
+      "id": "1",
+      "imgPath": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+      "title": "Fantastic Beasts: The Crimes of Grindelwald"
+    },
+    {
+      "id": "2",
+      "imgPath": "img/bohemian-rhapsody.jpg",
+      "title": "Bohemian Rhapsody"
+    },
+    {
+      "id": "3",
+      "imgPath": "img/macbeth.jpg",
+      "title": "Macbeth"
+    },
+    {
+      "id": "4",
+      "imgPath": "img/aviator.jpg",
+      "title": "Aviator"
+    },
+    {
+      "id": "5",
+      "imgPath": "img/we-need-to-talk-about-kevin.jpg",
+      "title": "We need to talk about Kevin"
+    },
+    {
+      "id": "6",
+      "imgPath": "img/what-we-do-in-the-shadows.jpg",
+      "title": "What We Do in the Shadows"
+    },
+    {
+      "id": "7",
+      "imgPath": "img/revenant.jpg",
+      "title": "Revenant"
+    },
+    {
+      "id": "8",
+      "imgPath": "img/johnny-english.jpg",
+      "title": "Johnny English"
+    },
+    {
+      "id": "9",
+      "imgPath": "img/shutter-island.jpg",
+      "title": "Shutter Island"
+    },
+    {
+      "id": "10",
+      "imgPath": "img/pulp-fiction.jpg",
+      "title": "Pulp Fiction"
+    },
+    {
+      "id": "11",
+      "imgPath": "img/no-country-for-old-men.jpg",
+      "title": "No Country for Old Men"
+    },
+    {
+      "id": "12",
+      "imgPath": "img/snatch.jpg",
+      "title": "Snatch"
+    },
+    {
+      "id": "13",
+      "imgPath": "img/moonrise-kingdom.jpg",
+      "title": "Moonrise Kingdom"
+    },
+    {
+      "id": "14",
+      "imgPath": "img/seven-years-in-tibet.jpg",
+      "title": "Seven Years in Tibet"
+    },
+    {
+      "id": "15",
+      "imgPath": "img/midnight-special.jpg",
+      "title": "Midnight Special"
+    },
+    {
+      "id": "16",
+      "imgPath": "img/war-of-the-worlds.jpg",
+      "title": "War of the Worlds"
+    },
+    {
+      "id": "17",
+      "imgPath": "img/dardjeeling-limited.jpg",
+      "title": "Dardjeeling Limited"
+    },
+    {
+      "id": "18",
+      "imgPath": "img/orlando.jpg",
+      "title": "Revenant"
+    },
+    {
+      "id": "19",
+      "imgPath": "Orlando",
+      "title": "Johnny English"
+    },
+    {
+      "id": "20",
+      "imgPath": "img/mindhunter.jpg",
+      "title": "Mindhunter"
+    },
+    {
+      "id": "21",
+      "imgPath": "img/midnight-special.jpg",
+      "title": "Midnight Special"
+    }
+  ]
+}
