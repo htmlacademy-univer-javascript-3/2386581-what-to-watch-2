@@ -9,3 +9,4 @@ export interface MainFim {
   genre: string;
   release: number;
 }
+
