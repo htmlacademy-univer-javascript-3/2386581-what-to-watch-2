@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 import type { FilmCard } from '../../types';
 
 type CardItemProps = {
   filmCard: FilmCard;
+  onHover: (id: string) => void;
 };
 
-function CardItem({ filmCard }: CardItemProps): JSX.Element {
+function CardItem({ filmCard, onHover }: CardItemProps): JSX.Element {
   return (
-    <article className="small-film-card catalog__films-card">
+    <article className="small-film-card catalog__films-card" onMouseOver={() => onHover(filmCard.id)}>
       <div className="small-film-card__image">
         <img
           src={filmCard.imgPath}
@@ -16,9 +19,12 @@ function CardItem({ filmCard }: CardItemProps): JSX.Element {
         />
       </div>
       <h3 className="small-film-card__title">
-        <a className="small-film-card__link" href="film-page.html">
+        <Link
+          to={AppRoute.Movie.replace(':id', filmCard.id)}
+          className="small-film-card__link"
+        >
           {filmCard.title}
-        </a>
+        </Link>
       </h3>
     </article>
   );

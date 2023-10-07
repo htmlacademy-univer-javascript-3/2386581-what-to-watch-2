@@ -1,3 +1,5 @@
+import type { ReviewFields } from './types';
+
 export enum AppRoute {
   Login = '/login',
   MyList = '/mylist',
@@ -12,3 +14,8 @@ export enum AuthorizationStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+export const INITIAL_REVIEW_STATE: ReviewFields = {
+  rating: 0,
+  text: '',
+};
