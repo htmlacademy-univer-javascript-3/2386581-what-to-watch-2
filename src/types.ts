@@ -1,7 +1,8 @@
-export interface FilmCard {
+export interface FilmPreview {
   id: string;
   imgPath: string;
   title: string;
+  previewVideoLink: string;
 }
 
 export interface MainFim {
@@ -25,5 +26,5 @@ export interface ReviewFields {
 export interface Player {
   videoLink: string;
   posterImage: string;
-  title: string;
+  title?: string;
 }
