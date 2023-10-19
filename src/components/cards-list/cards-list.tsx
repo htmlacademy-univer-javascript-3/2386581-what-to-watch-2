@@ -1,18 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CardItem from '../../components/card-item/card-item';
-import type { FilmCard } from '../../types';
+import type { FilmPreview } from '../../types';
 
 type CardsFilmProps = {
-  filmCardsList: FilmCard[];
+  filmCardsList: FilmPreview[];
 };
 
 function CardsList({ filmCardsList }: CardsFilmProps): JSX.Element {
-  const [, setActiveFilmCard] = useState<string>('');
+  const [activeFilmCard, setActiveFilmCard] = useState<string>('');
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleActiveFilmCard = (filmId: string) => {
+    if (filmId) {
+      timeoutRef.current = setTimeout(() => setActiveFilmCard(filmId), 1000);
+    } else if (timeoutRef.current) {
+      setActiveFilmCard('');
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  useEffect(
+    () => () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    },
+    []
+  );
 
   return (
     <div className="catalog__films-list">
       {filmCardsList.map((card) => (
-        <CardItem key={card.id} filmCard={card} onHover={setActiveFilmCard} />
+        <CardItem
+          key={card.id}
+          filmPreview={card}
+          isPlayerActive={activeFilmCard === card.id}
+          onHover={handleActiveFilmCard}
+        />
       ))}
     </div>
   );
