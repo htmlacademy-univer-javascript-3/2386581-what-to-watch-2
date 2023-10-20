@@ -9,13 +9,13 @@ import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
-import { FilmCard, MainFim, Player } from '../../types';
+import { FilmPreview, MainFim, Player } from '../../types';
 import { AppRoute, AuthorizationStatus } from '../../const';
 
 type AppProps = {
   mainFilm: MainFim;
-  filmCards: FilmCard[];
-  myListFilmCards: FilmCard[];
+  filmCards: FilmPreview[];
+  myListFilmCards: FilmPreview[];
   player: Player;
 };
 
