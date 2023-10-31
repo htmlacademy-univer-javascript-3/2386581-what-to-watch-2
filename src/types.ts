@@ -2,7 +2,18 @@ export interface FilmPreview {
   id: string;
   imgPath: string;
   title: string;
-  previewVideoLink: string;
+  previewVideoLink?: string;
+}
+export interface FilmData extends FilmPreview {
+  genre: string;
+  released: number;
+  rating: number;
+  scoresCount: number;
+  description: string;
+  director: string;
+  starring: string[];
+  runtime: string;
+  // reviews: Review[];
 }
 
 export interface MainFim {

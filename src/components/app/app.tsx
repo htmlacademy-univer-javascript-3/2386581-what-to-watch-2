@@ -9,17 +9,26 @@ import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
-import { FilmPreview, MainFim, Player } from '../../types';
+import { FilmPreview, MainFim, Player, FilmData, Review } from '../../types';
 import { AppRoute, AuthorizationStatus } from '../../const';
 
 type AppProps = {
   mainFilm: MainFim;
   filmCards: FilmPreview[];
   myListFilmCards: FilmPreview[];
+  filmData: FilmData;
   player: Player;
+  reviews: Review[];
 };
 
-function App({ mainFilm, filmCards, myListFilmCards, player }: AppProps): JSX.Element {
+function App({
+  mainFilm,
+  filmCards,
+  myListFilmCards,
+  filmData,
+  player,
+  reviews,
+}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -28,9 +37,18 @@ function App({ mainFilm, filmCards, myListFilmCards, player }: AppProps): JSX.El
           element={<MainPage mainFilm={mainFilm} filmCards={filmCards} />}
         />
         <Route path={AppRoute.Login} element={<SignInPage />} />
-        <Route path={AppRoute.Movie} element={<MoviePage />} />
-        <Route path={AppRoute.AddReview} element={<AddReviewPage film={filmCards[0]}/>} />
-        <Route path={AppRoute.Player} element={<PlayerPage player={player} />} />
+        <Route
+          path={AppRoute.Movie}
+          element={<MoviePage filmData={filmData} reviews={reviews} />}
+        />
+        <Route
+          path={AppRoute.AddReview}
+          element={<AddReviewPage film={filmCards[0]} />}
+        />
+        <Route
+          path={AppRoute.Player}
+          element={<PlayerPage player={player} />}
+        />
         <Route
           path={AppRoute.MyList}
           element={

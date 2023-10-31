@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import type { Player } from '../../types';
 
-export interface VideoPlayerProps extends Player {
+interface VideoPlayerProps extends Player {
   muted?: boolean;
   autoPlay?: boolean;
 }
