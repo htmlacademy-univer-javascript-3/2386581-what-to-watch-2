@@ -1,9 +1,9 @@
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
-import type { FilmCard } from '../../types';
+import type { FilmPreview } from '../../types';
 
 type AddReviewPageProps = {
-  film: FilmCard;
+  film: FilmPreview;
 };
 
 function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {

@@ -9,6 +9,12 @@ export enum AppRoute {
   Player = '/player/:id',
 }
 
+export enum MoviePageRoute {
+  Overview = 'Overview',
+  Details = 'Details',
+  Reviews = 'Reviews'
+}
+
 export enum AuthorizationStatus {
   Auth = 'AUTH',
   NoAuth = 'NO_AUTH',

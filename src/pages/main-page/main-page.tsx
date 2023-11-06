@@ -1,10 +1,10 @@
 import CardsList from '../../components/cards-list/cards-list';
 import MainFimCard from '../../components/main-film-card/main-film-card';
-import type { FilmCard, MainFim } from '../../types';
+import type { FilmPreview, MainFim } from '../../types';
 
 type MainPageProps = {
   mainFilm: MainFim;
-  filmCards: FilmCard[];
+  filmCards: FilmPreview[];
 };
 
 function MainPage({ mainFilm, filmCards }: MainPageProps): JSX.Element {
