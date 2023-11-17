@@ -5,10 +5,10 @@ import { MoviePageRoute } from '../../const';
 import FilmOverview from '../film-overview/film-overview';
 import FilmDetails from '../film-details/film-details';
 import FilmReviews from '../film-reviews/film-reviews';
-import type { FilmData, Review } from '../../types';
+import type { FilmInfo, Review } from '../../types';
 
 type TabsProps = {
-  filmData: FilmData;
+  filmData: FilmInfo;
   reviews: Review[];
 };
 

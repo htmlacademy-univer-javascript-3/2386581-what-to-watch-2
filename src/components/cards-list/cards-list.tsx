@@ -1,12 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import CardItem from '../../components/card-item/card-item';
 import type { FilmPreview } from '../../types';
+import { filmCards } from '../../mocks/data.json';
 
 type CardsFilmProps = {
-  filmCardsList: FilmPreview[];
+  maxFilms?: number;
+  genre?: string;
 };
 
-function CardsList({ filmCardsList }: CardsFilmProps): JSX.Element {
+function CardsList({
+  maxFilms = filmCards.length,
+  genre,
+}: CardsFilmProps): JSX.Element {
   const [activeFilmCard, setActiveFilmCard] = useState<string>('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -28,9 +33,13 @@ function CardsList({ filmCardsList }: CardsFilmProps): JSX.Element {
     []
   );
 
+  const filteredFilms: FilmPreview[] = genre
+    ? filmCards.filter((film) => film.genre === genre)
+    : filmCards;
+
   return (
     <div className="catalog__films-list">
-      {filmCardsList.map((card) => (
+      {filteredFilms.slice(0, maxFilms).map((card) => (
         <CardItem
           key={card.id}
           filmPreview={card}
