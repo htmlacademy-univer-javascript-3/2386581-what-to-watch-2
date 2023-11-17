@@ -1,7 +1,7 @@
-import type { FilmData } from '../../types';
+import type { FilmInfo } from '../../types';
 
 type FilmDetailsProps = Pick<
-  FilmData,
+  FilmInfo,
   'director' | 'starring' | 'runtime' | 'genre' | 'released'
 >;
 

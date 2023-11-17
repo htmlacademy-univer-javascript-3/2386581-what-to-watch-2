@@ -1,8 +1,8 @@
 import React from 'react';
-import type { FilmData } from '../../types';
+import type { FilmInfo } from '../../types';
 
 type FilmOverviewProps = Pick<
-  FilmData,
+  FilmInfo,
   'rating' | 'description' | 'director' | 'starring' | 'scoresCount'
 >;
 

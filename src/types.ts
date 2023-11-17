@@ -1,11 +1,17 @@
+import { store } from './store';
+
+export type State = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
+
 export interface FilmPreview {
   id: string;
   imgPath: string;
   title: string;
   previewVideoLink?: string;
+  genre: string;
 }
 export interface FilmData extends FilmPreview {
-  genre: string;
   released: number;
   rating: number;
   scoresCount: number;
@@ -13,6 +19,22 @@ export interface FilmData extends FilmPreview {
   director: string;
   starring: string[];
   runtime: string;
+  // reviews: Review[];
+}
+
+export interface FilmInfo {
+  id: string;
+  imgPath: string;
+  title: string;
+  previewVideoLink?: string;
+  genre: string;
+  released?: number;
+  rating?: number;
+  scoresCount?: number;
+  description?: string;
+  director?: string;
+  starring?: string[];
+  runtime?: string;
   // reviews: Review[];
 }
 

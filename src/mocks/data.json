@@ -10,127 +10,400 @@
       "id": "1",
       "imgPath": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
       "title": "Fantastic Beasts: The Crimes of Grindelwald",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "2",
       "imgPath": "img/bohemian-rhapsody.jpg",
       "title": "Bohemian Rhapsody",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "3",
       "imgPath": "img/macbeth.jpg",
       "title": "Macbeth",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "4",
       "imgPath": "img/aviator.jpg",
       "title": "Aviator",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "5",
       "imgPath": "img/we-need-to-talk-about-kevin.jpg",
       "title": "We need to talk about Kevin",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "6",
       "imgPath": "img/what-we-do-in-the-shadows.jpg",
       "title": "What We Do in the Shadows",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "7",
       "imgPath": "img/revenant.jpg",
       "title": "Revenant",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "8",
       "imgPath": "img/johnny-english.jpg",
       "title": "Johnny English",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "9",
       "imgPath": "img/shutter-island.jpg",
       "title": "Shutter Island",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "10",
       "imgPath": "img/pulp-fiction.jpg",
       "title": "Pulp Fiction",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "11",
       "imgPath": "img/no-country-for-old-men.jpg",
       "title": "No Country for Old Men",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "12",
       "imgPath": "img/snatch.jpg",
       "title": "Snatch",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "13",
       "imgPath": "img/moonrise-kingdom.jpg",
       "title": "Moonrise Kingdom",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "14",
       "imgPath": "img/seven-years-in-tibet.jpg",
       "title": "Seven Years in Tibet",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "15",
       "imgPath": "img/midnight-special.jpg",
       "title": "Midnight Special",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "16",
       "imgPath": "img/war-of-the-worlds.jpg",
       "title": "War of the Worlds",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "17",
       "imgPath": "img/dardjeeling-limited.jpg",
       "title": "Dardjeeling Limited",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "18",
       "imgPath": "img/orlando.jpg",
       "title": "Revenant",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "19",
       "imgPath": "Orlando",
       "title": "Johnny English",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "20",
       "imgPath": "img/mindhunter.jpg",
       "title": "Mindhunter",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     },
     {
       "id": "21",
       "imgPath": "img/midnight-special.jpg",
       "title": "Midnight Special",
-      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
+      "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      "genre": "Drama",
+      "released": 2010,
+      "rating": 9,
+      "scoresCount": 240,
+      "runtime": "1h 39m",
+      "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+      "director": "Wes Anderson",
+      "starring": [
+        "Bill Murray",
+        "Edward Norton",
+        "Jude Law",
+        "Willem Dafoe and other"
+      ]
     }
   ],
 
@@ -146,6 +419,24 @@
     "runtime": "1h 39m",
     "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
     "director": "Wes Anderson",
-    "starring": ["Bill Murray", "Edward Norton", "Jude Law", "Willem Dafoe and other"]
+    "starring": [
+      "Bill Murray",
+      "Edward Norton",
+      "Jude Law",
+      "Willem Dafoe and other"
+    ],
+    "genre": "Drama",
+    "released": 2010,
+    "rating": 9,
+    "scoresCount": 240,
+    "runtime": "1h 39m",
+    "description": "<p> In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege. </p> <p> Gustave prides himself on providing first-className service to the hotel&apos;s guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder. </p>",
+    "director": "Wes Anderson",
+    "starring": [
+      "Bill Murray",
+      "Edward Norton",
+      "Jude Law",
+      "Willem Dafoe and other"
+    ]
   }
 }

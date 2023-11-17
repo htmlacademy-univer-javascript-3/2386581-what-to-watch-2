@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { mainFilm, filmCards, filmDetails } from './mocks/data.json';
-import { myListFilmCards } from './mocks/my-list.json';
 import { player } from './mocks/player.json';
 import { reviews } from './mocks/reviews.json';
 
@@ -17,7 +16,7 @@ root.render(
       filmData={filmDetails}
       mainFilm={mainFilm}
       filmCards={filmCards}
-      myListFilmCards={myListFilmCards}
+      myListFilmCards={filmCards}
       player={player}
     />
   </React.StrictMode>
