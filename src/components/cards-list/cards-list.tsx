@@ -1,19 +1,26 @@
 import { useState, useEffect, useRef } from 'react';
+import { useAppSelector } from '../../hooks/store';
 import CardItem from '../../components/card-item/card-item';
 import type { FilmPreview } from '../../types';
 import { filmCards } from '../../mocks/data.json';
 
 type CardsFilmProps = {
   maxFilms?: number;
-  genre?: string;
+  moreLikeThisGenre?: string;
 };
 
 function CardsList({
   maxFilms = filmCards.length,
-  genre,
+  moreLikeThisGenre,
 }: CardsFilmProps): JSX.Element {
   const [activeFilmCard, setActiveFilmCard] = useState<string>('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const filmsByGenre = useAppSelector((state) => state.filmsByGenre);
+
+  const filteredFilms: FilmPreview[] = moreLikeThisGenre
+    ? filmsByGenre.filter((film) => film.genre === moreLikeThisGenre)
+    : filmsByGenre;
 
   const handleActiveFilmCard = (filmId: string) => {
     if (filmId) {
@@ -32,10 +39,6 @@ function CardsList({
     },
     []
   );
-
-  const filteredFilms: FilmPreview[] = genre
-    ? filmCards.filter((film) => film.genre === genre)
-    : filmCards;
 
   return (
     <div className="catalog__films-list">
