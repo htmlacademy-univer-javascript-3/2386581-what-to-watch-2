@@ -1,5 +1,7 @@
 import Catalog from '../../components/catalog/catalog';
 import MainFimCard from '../../components/main-film-card/main-film-card';
+import Logo from '../../components/logo/logo';
+import Footer from '../../components/footer/footer';
 import type { MainFim } from '../../types';
 
 type MainPageProps = {
@@ -115,13 +117,7 @@ function MainPage({ mainFilm }: MainPageProps): JSX.Element {
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header film-card__head">
-          <div className="logo">
-            <a className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
+          <Logo />
 
           <ul className="user-block">
             <li className="user-block__item">
@@ -147,20 +143,7 @@ function MainPage({ mainFilm }: MainPageProps): JSX.Element {
 
       <div className="page-content">
         <Catalog />
-
-        <footer className="page-footer">
-          <div className="logo">
-            <a className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
