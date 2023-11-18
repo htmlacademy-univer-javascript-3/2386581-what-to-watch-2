@@ -1,6 +1,6 @@
 import Catalog from '../../components/catalog/catalog';
 import MainFimCard from '../../components/main-film-card/main-film-card';
-import Logo from '../../components/logo/logo';
+import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import type { MainFim } from '../../types';
 
@@ -116,25 +116,7 @@ function MainPage({ mainFilm }: MainPageProps): JSX.Element {
 
         <h1 className="visually-hidden">WTW</h1>
 
-        <header className="page-header film-card__head">
-          <Logo />
-
-          <ul className="user-block">
-            <li className="user-block__item">
-              <div className="user-block__avatar">
-                <img
-                  src="img/avatar.jpg"
-                  alt="User avatar"
-                  width="63"
-                  height="63"
-                />
-              </div>
-            </li>
-            <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
-            </li>
-          </ul>
-        </header>
+        <Header className="film-card__head" />
 
         <div className="film-card__wrap">
           <MainFimCard mainFilm={mainFilm} />

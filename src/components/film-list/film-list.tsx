@@ -7,7 +7,7 @@ import { filmCards } from '../../mocks/data.json';
 type CardsFilmProps = {
   maxFilms?: number;
   moreLikeThisGenre?: string;
-  filmsByGenre: FilmInfo[];
+  filmsByGenre?: FilmInfo[];
 };
 
 function FilmList({
@@ -20,7 +20,7 @@ function FilmList({
 
   const filteredFilms: FilmPreview[] = moreLikeThisGenre
     ? filmCards.filter((film) => film.genre === moreLikeThisGenre)
-    : filmsByGenre;
+    : filmsByGenre || filmCards;
 
   const handleActiveFilmCard = (filmId: string) => {
     if (filmId) {
