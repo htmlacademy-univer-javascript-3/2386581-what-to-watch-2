@@ -1,11 +1,11 @@
-import CardsList from '../../components/cards-list/cards-list';
+import FilmList from '../../components/film-list/film-list';
 import type { FilmPreview } from '../../types';
 
 type MyListPageProps = {
   filmCards: FilmPreview[];
 };
 
-function MyListPage({filmCards}: MyListPageProps): JSX.Element {
+function MyListPage({ filmCards }: MyListPageProps): JSX.Element {
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
@@ -40,7 +40,7 @@ function MyListPage({filmCards}: MyListPageProps): JSX.Element {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <CardsList />
+        <FilmList filmsByGenre={filmCards}/>
       </section>
 
       <footer className="page-footer">

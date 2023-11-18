@@ -1,4 +1,4 @@
-import CardsList from '../../components/cards-list/cards-list';
+import FilmList from '../../components/film-list/film-list';
 import Tabs from '../../components/tabs/tabs';
 import type { FilmInfo, Review } from '../../types';
 
@@ -107,7 +107,7 @@ function MoviePage({ filmData, reviews }: MoviePageProps): JSX.Element {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <CardsList maxFilms={MORE_FILMS_QUNATITY}/>
+          <FilmList maxFilms={MORE_FILMS_QUNATITY} />
         </section>
 
         <footer className="page-footer">

@@ -1,14 +1,12 @@
-import CardsList from '../../components/cards-list/cards-list';
-import GenreList from '../../components/genre-list/genre-list';
+import Catalog from '../../components/catalog/catalog';
 import MainFimCard from '../../components/main-film-card/main-film-card';
-import type { FilmPreview, MainFim } from '../../types';
+import type { MainFim } from '../../types';
 
 type MainPageProps = {
   mainFilm: MainFim;
-  filmCards: FilmPreview[];
 };
 
-function MainPage({ mainFilm, filmCards }: MainPageProps): JSX.Element {
+function MainPage({ mainFilm }: MainPageProps): JSX.Element {
   return (
     <div>
       <div className="visually-hidden">
@@ -148,19 +146,7 @@ function MainPage({ mainFilm, filmCards }: MainPageProps): JSX.Element {
       </section>
 
       <div className="page-content">
-        <section className="catalog">
-          <h2 className="catalog__title visually-hidden">Catalog</h2>
-
-          <GenreList filmsList={filmCards}/>
-
-          <CardsList />
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">
-              Show more
-            </button>
-          </div>
-        </section>
+        <Catalog />
 
         <footer className="page-footer">
           <div className="logo">
