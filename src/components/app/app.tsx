@@ -34,7 +34,7 @@ function App({
       <Routes>
         <Route
           path={AppRoute.Root}
-          element={<MainPage mainFilm={mainFilm} filmCards={filmCards} />}
+          element={<MainPage mainFilm={mainFilm} />}
         />
         <Route path={AppRoute.Login} element={<SignInPage />} />
         <Route

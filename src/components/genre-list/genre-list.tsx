@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useMemo, FormEvent } from 'react';
-import { useAppDispatch } from '../../hooks/store';
+import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import { getFilmsByGenre } from '../../store/action';
 import type { FilmInfo } from '../../types';
 
@@ -11,7 +11,6 @@ type GenreItemProps = {
 
 type GenreListProps = {
   filmsList: FilmInfo[];
-  activeGenre: string;
 };
 
 function GenreItem({ genre, isActive }: GenreItemProps): JSX.Element {
@@ -37,7 +36,8 @@ function GenreItem({ genre, isActive }: GenreItemProps): JSX.Element {
   );
 }
 
-function GenreList({ filmsList, activeGenre }: GenreListProps): JSX.Element {
+function GenreList({ filmsList }: GenreListProps): JSX.Element {
+  const activeGenre = useAppSelector((state) => state.genre);
   const genreList = useMemo(
     () =>
       ['All genres', ...new Set(filmsList.map((film) => film.genre))].splice(
