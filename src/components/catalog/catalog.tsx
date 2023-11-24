@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react';
-import { useAppSelector } from '../../hooks/store';
+import { useState, useEffect, useLayoutEffect } from 'react';
+import { useAppSelector, useAppDispatch } from '../../hooks/store';
+import { getFilmList } from '../../store/api-action';
 import GenreList from '../genre-list/genre-list';
 import FilmList from '../film-list/film-list';
 import Button from '../button/button';
+import Loader from '../loader/loader';
 
 const DEFAULT_LIST_LENGTH = 8;
 
 function Catalog(): JSX.Element {
+  const dispatch = useAppDispatch();
   const filmsByGenre = useAppSelector((state) => state.filmsByGenre);
   const filmList = useAppSelector((state) => state.films);
 
@@ -24,6 +27,14 @@ function Catalog(): JSX.Element {
     },
     [filmsByGenre]
   );
+
+  useLayoutEffect(() => {
+    dispatch(getFilmList());
+  }, [dispatch]);
+
+  if (!filmList.length) {
+    return <Loader />;
+  }
 
   return (
     <section className="catalog">

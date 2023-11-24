@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { AuthorizationStatus } from '../../const';
 
-function UserBlock(): JSX.Element {
+type UserBlockProps = {
+  authStatus: string;
+};
+
+function UserBlock({ authStatus }: UserBlockProps): JSX.Element {
   const [label, setLabel] = useState('Sign out');
 
-  switch (label) {
+  switch (authStatus) {
     case AuthorizationStatus.Auth:
       setLabel('Sign out');
       break;

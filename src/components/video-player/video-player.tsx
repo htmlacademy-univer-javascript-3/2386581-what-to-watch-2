@@ -8,14 +8,14 @@ interface VideoPlayerProps extends Player {
 
 const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
   (
-    { videoLink, muted = true, autoPlay = true }: VideoPlayerProps,
+    { previewVideoLink, muted = true, autoPlay = true }: VideoPlayerProps,
     ref: React.ForwardedRef<HTMLVideoElement>
   ): JSX.Element => (
     <video
       className="small-film-card__image"
       ref={ref}
       muted={muted}
-      src={videoLink}
+      src={previewVideoLink}
       autoPlay={autoPlay}
     />
   )
