@@ -9,6 +9,10 @@ export enum AppRoute {
   Player = '/player/:id',
 }
 
+export enum APIRoute {
+  Films = '/films'
+}
+
 export enum MoviePageRoute {
   Overview = 'Overview',
   Details = 'Details',

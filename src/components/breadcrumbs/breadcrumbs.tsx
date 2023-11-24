@@ -3,11 +3,11 @@ import { AppRoute } from '../../const';
 import type { FilmPreview } from '../../types';
 
 type BreadcrumbsProps = {
-  film: Pick<FilmPreview, 'id' | 'title'>;
-  title: string;
+  film: Pick<FilmPreview, 'id' | 'name'>;
+  name: string;
 };
 
-function Breadcrumbs({ film, title }: BreadcrumbsProps) {
+function Breadcrumbs({ film, name }: BreadcrumbsProps) {
   return (
     <nav className="breadcrumbs">
       <ul className="breadcrumbs__list">
@@ -16,11 +16,11 @@ function Breadcrumbs({ film, title }: BreadcrumbsProps) {
             to={AppRoute.Movie.replace(':id', film.id)}
             className="breadcrumbs__link"
           >
-            {film.title}
+            {film.name}
           </Link>
         </li>
         <li className="breadcrumbs__item">
-          <a className="breadcrumbs__link">{title}</a>
+          <a className="breadcrumbs__link">{name}</a>
         </li>
       </ul>
     </nav>

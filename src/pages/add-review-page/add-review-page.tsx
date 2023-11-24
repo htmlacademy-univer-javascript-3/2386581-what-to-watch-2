@@ -116,7 +116,7 @@ function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
               </a>
             </div>
 
-            <Breadcrumbs film={film} title="Add review" />
+            <Breadcrumbs film={film} name="Add review" />
 
             <ul className="user-block">
               <li className="user-block__item">
@@ -137,8 +137,8 @@ function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
 
           <div className="film-card__poster film-card__poster--small">
             <img
-              src={film.imgPath}
-              alt={film.title}
+              src={film.previewImage}
+              alt={film.name}
               width="218"
               height="327"
             />

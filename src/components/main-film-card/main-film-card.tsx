@@ -17,7 +17,7 @@ function MainFim({ mainFilm }: MainFilmProps): JSX.Element {
       </div>
 
       <div className="film-card__desc">
-        <h2 className="film-card__title">{mainFilm.title}</h2>
+        <h2 className="film-card__title">{mainFilm.name}</h2>
         <p className="film-card__meta">
           <span className="film-card__genre">{mainFilm.genre}</span>
           <span className="film-card__year">{mainFilm.release}</span>

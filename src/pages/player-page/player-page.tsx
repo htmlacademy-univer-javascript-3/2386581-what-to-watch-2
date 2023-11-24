@@ -7,7 +7,7 @@ type PlayerProps = {
 function PlayerPage({ player }: PlayerProps): JSX.Element {
   return (
     <div className="player">
-      <video src={player.videoLink} className="player__video" poster={player.posterImage} />
+      <video src={player.previewVideoLink} className="player__video" poster={player.posterImage} />
 
       <button type="button" className="player__exit">
         Exit
@@ -31,7 +31,7 @@ function PlayerPage({ player }: PlayerProps): JSX.Element {
             </svg>
             <span>Play</span>
           </button>
-          <div className="player__name">{player.title}</div>
+          <div className="player__name">{player.name}</div>
 
           <button type="button" className="player__full-screen">
             <svg viewBox="0 0 27 27" width="27" height="27">

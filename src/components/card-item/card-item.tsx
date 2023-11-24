@@ -14,7 +14,7 @@ function CardItem({
   isPlayerActive,
   onHover,
 }: CardItemProps): JSX.Element {
-  const { id, imgPath, previewVideoLink, title } = filmPreview;
+  const { id, previewImage, previewVideoLink, name } = filmPreview;
 
   return (
     <article
@@ -24,12 +24,12 @@ function CardItem({
     >
       {isPlayerActive ? (
         <VideoPlayer
-          videoLink={previewVideoLink}
-          posterImage={imgPath}
+          previewVideoLink={previewVideoLink}
+          posterImage={previewImage}
         />
       ) : (
         <div className="small-film-card__image">
-          <img src={imgPath} alt={title} width="280" height="175" />
+          <img src={previewImage} alt={name} width="280" height="175" />
         </div>
       )}
       <h3 className="small-film-card__title">
@@ -37,7 +37,7 @@ function CardItem({
           to={AppRoute.Movie.replace(':id', id)}
           className="small-film-card__link"
         >
-          {title}
+          {name}
         </Link>
       </h3>
     </article>

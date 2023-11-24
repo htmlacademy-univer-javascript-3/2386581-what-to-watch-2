@@ -4,30 +4,25 @@ export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
-export interface FilmPreview {
-  id: string;
-  imgPath: string;
-  title: string;
-  previewVideoLink?: string;
+export interface MainPageInitialState {
+  films: FilmInfo[];
   genre: string;
-}
-export interface FilmData extends FilmPreview {
-  released: number;
-  rating: number;
-  scoresCount: number;
-  description: string;
-  director: string;
-  starring: string[];
-  runtime: string;
-  // reviews: Review[];
+  filmsByGenre: FilmInfo[];
+  isLoading: boolean;
+  // film: FilmInfo;
+  // promo: FilmInfo;
+  // isFilmLoading: boolean;
 }
 
-export interface FilmInfo {
+export interface FilmPreview {
   id: string;
-  imgPath: string;
-  title: string;
+  previewImage: string;
+  name: string;
   previewVideoLink?: string;
   genre: string;
+}
+
+export interface FilmInfo extends FilmPreview {
   released?: number;
   rating?: number;
   scoresCount?: number;
@@ -39,7 +34,7 @@ export interface FilmInfo {
 }
 
 export interface MainFim {
-  title: string;
+  name: string;
   genre: string;
   release: number;
 }
@@ -57,7 +52,7 @@ export interface ReviewFields {
 }
 
 export interface Player {
-  videoLink: string;
+  previewVideoLink?: string;
   posterImage: string;
-  title?: string;
+  name?: string;
 }
