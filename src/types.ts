@@ -1,17 +1,30 @@
 import { store } from './store';
+import { AuthorizationStatus } from './const';
 
 export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
+export type UserData = {
+  id: number;
+  email: string;
+  token: string;
+};
+
+export type AuthData = {
+  login: string;
+  password: string;
+};
+
 export interface MainPageInitialState {
+  authorizationStatus: AuthorizationStatus;
   films: FilmInfo[];
   genre: string;
   filmsByGenre: FilmInfo[];
   isLoading: boolean;
+  error: string | null;
   // film: FilmInfo;
   // promo: FilmInfo;
-  // isFilmLoading: boolean;
 }
 
 export interface FilmPreview {

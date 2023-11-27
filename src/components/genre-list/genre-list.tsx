@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useMemo, FormEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
-import { getFilmsByGenre } from '../../store/action';
+import { getFilmsByGenre } from '../../store/actions';
 import type { FilmInfo } from '../../types';
 
 type GenreItemProps = {
