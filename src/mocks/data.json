@@ -1,6 +1,6 @@
 {
   "mainFilm": {
-    "title": "The Grand Budapest Hotel",
+    "name": "The Grand Budapest Hotel",
     "genre": "Drama",
     "release": 2014
   },
@@ -8,8 +8,8 @@
   "filmCards": [
     {
       "id": "1",
-      "imgPath": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
-      "title": "Fantastic Beasts: The Crimes of Grindelwald",
+      "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+      "name": "Fantastic Beasts: The Crimes of Grindelwald",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -27,8 +27,8 @@
     },
     {
       "id": "2",
-      "imgPath": "img/bohemian-rhapsody.jpg",
-      "title": "Bohemian Rhapsody",
+      "previewImage": "img/bohemian-rhapsody.jpg",
+      "name": "Bohemian Rhapsody",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Comedy",
       "released": 2010,
@@ -46,8 +46,8 @@
     },
     {
       "id": "3",
-      "imgPath": "img/macbeth.jpg",
-      "title": "Macbeth",
+      "previewImage": "img/macbeth.jpg",
+      "name": "Macbeth",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -65,8 +65,8 @@
     },
     {
       "id": "4",
-      "imgPath": "img/aviator.jpg",
-      "title": "Aviator",
+      "previewImage": "img/aviator.jpg",
+      "name": "Aviator",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -84,8 +84,8 @@
     },
     {
       "id": "5",
-      "imgPath": "img/we-need-to-talk-about-kevin.jpg",
-      "title": "We need to talk about Kevin",
+      "previewImage": "img/we-need-to-talk-about-kevin.jpg",
+      "name": "We need to talk about Kevin",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Comedy",
       "released": 2010,
@@ -103,8 +103,8 @@
     },
     {
       "id": "6",
-      "imgPath": "img/what-we-do-in-the-shadows.jpg",
-      "title": "What We Do in the Shadows",
+      "previewImage": "img/what-we-do-in-the-shadows.jpg",
+      "name": "What We Do in the Shadows",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -122,8 +122,8 @@
     },
     {
       "id": "7",
-      "imgPath": "img/revenant.jpg",
-      "title": "Revenant",
+      "previewImage": "img/revenant.jpg",
+      "name": "Revenant",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Comedy",
       "released": 2010,
@@ -141,8 +141,8 @@
     },
     {
       "id": "8",
-      "imgPath": "img/johnny-english.jpg",
-      "title": "Johnny English",
+      "previewImage": "img/johnny-english.jpg",
+      "name": "Johnny English",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -160,8 +160,8 @@
     },
     {
       "id": "9",
-      "imgPath": "img/shutter-island.jpg",
-      "title": "Shutter Island",
+      "previewImage": "img/shutter-island.jpg",
+      "name": "Shutter Island",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -179,8 +179,8 @@
     },
     {
       "id": "10",
-      "imgPath": "img/pulp-fiction.jpg",
-      "title": "Pulp Fiction",
+      "previewImage": "img/pulp-fiction.jpg",
+      "name": "Pulp Fiction",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -198,8 +198,8 @@
     },
     {
       "id": "11",
-      "imgPath": "img/no-country-for-old-men.jpg",
-      "title": "No Country for Old Men",
+      "previewImage": "img/no-country-for-old-men.jpg",
+      "name": "No Country for Old Men",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -217,8 +217,8 @@
     },
     {
       "id": "12",
-      "imgPath": "img/snatch.jpg",
-      "title": "Snatch",
+      "previewImage": "img/snatch.jpg",
+      "name": "Snatch",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -236,8 +236,8 @@
     },
     {
       "id": "13",
-      "imgPath": "img/moonrise-kingdom.jpg",
-      "title": "Moonrise Kingdom",
+      "previewImage": "img/moonrise-kingdom.jpg",
+      "name": "Moonrise Kingdom",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -255,8 +255,8 @@
     },
     {
       "id": "14",
-      "imgPath": "img/seven-years-in-tibet.jpg",
-      "title": "Seven Years in Tibet",
+      "previewImage": "img/seven-years-in-tibet.jpg",
+      "name": "Seven Years in Tibet",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -274,8 +274,8 @@
     },
     {
       "id": "15",
-      "imgPath": "img/midnight-special.jpg",
-      "title": "Midnight Special",
+      "previewImage": "img/midnight-special.jpg",
+      "name": "Midnight Special",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -293,8 +293,8 @@
     },
     {
       "id": "16",
-      "imgPath": "img/war-of-the-worlds.jpg",
-      "title": "War of the Worlds",
+      "previewImage": "img/war-of-the-worlds.jpg",
+      "name": "War of the Worlds",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -312,8 +312,8 @@
     },
     {
       "id": "17",
-      "imgPath": "img/dardjeeling-limited.jpg",
-      "title": "Dardjeeling Limited",
+      "previewImage": "img/dardjeeling-limited.jpg",
+      "name": "Dardjeeling Limited",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -331,8 +331,8 @@
     },
     {
       "id": "18",
-      "imgPath": "img/orlando.jpg",
-      "title": "Revenant",
+      "previewImage": "img/orlando.jpg",
+      "name": "Revenant",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -350,8 +350,8 @@
     },
     {
       "id": "19",
-      "imgPath": "Orlando",
-      "title": "Johnny English",
+      "previewImage": "Orlando",
+      "name": "Johnny English",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -369,8 +369,8 @@
     },
     {
       "id": "20",
-      "imgPath": "img/mindhunter.jpg",
-      "title": "Mindhunter",
+      "previewImage": "img/mindhunter.jpg",
+      "name": "Mindhunter",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -388,8 +388,8 @@
     },
     {
       "id": "21",
-      "imgPath": "img/midnight-special.jpg",
-      "title": "Midnight Special",
+      "previewImage": "img/midnight-special.jpg",
+      "name": "Midnight Special",
       "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       "genre": "Drama",
       "released": 2010,
@@ -409,8 +409,8 @@
 
   "filmDetails": {
     "id": "1",
-    "imgPath": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
-    "title": "Fantastic Beasts: The Crimes of Grindelwald",
+    "previewImage": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+    "name": "Fantastic Beasts: The Crimes of Grindelwald",
     "previewVideoLink": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
     "genre": "Drama",
     "released": 2010,

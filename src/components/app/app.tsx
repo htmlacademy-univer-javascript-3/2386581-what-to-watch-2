@@ -10,7 +10,7 @@ import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
 import { FilmPreview, MainFim, Player, FilmInfo, Review } from '../../types';
-import { AppRoute, AuthorizationStatus } from '../../const';
+import { AppRoute } from '../../const';
 
 type AppProps = {
   mainFilm: MainFim;
@@ -52,7 +52,7 @@ function App({
         <Route
           path={AppRoute.MyList}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <PrivateRoute>
               <MyListPage filmCards={myListFilmCards} />
             </PrivateRoute>
           }
