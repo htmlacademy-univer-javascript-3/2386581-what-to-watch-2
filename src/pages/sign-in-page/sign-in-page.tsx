@@ -3,7 +3,39 @@ import Button from '../../components/button/button';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 
+import { useRef, FormEvent, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../hooks/store';
+import { loginAction } from '../../store/api-actions';
+import { AppRoute, AuthorizationStatus } from '../../const';
+
 function SignInPage() {
+  const loginRef = useRef<HTMLInputElement | null>(null);
+  const passwordRef = useRef<HTMLInputElement | null>(null);
+
+  const isAuthorized = useAppSelector((state) => state.authorizationStatus);
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    if (loginRef.current !== null && passwordRef.current !== null) {
+      const loginData = loginAction({
+        login: loginRef.current.value,
+        password: passwordRef.current.value,
+      });
+      dispatch(loginData);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthorized === AuthorizationStatus.Auth) {
+      navigate(AppRoute.Root);
+    }
+  }, [isAuthorized, navigate]);
+
   return (
     <div className="user-page">
       <Header className="user-page__head">
@@ -11,10 +43,11 @@ function SignInPage() {
       </Header>
 
       <div className="sign-in user-page__content">
-        <form action="#" className="sign-in__form">
+        <form action="" className="sign-in__form" onSubmit={handleSubmit}>
           <div className="sign-in__fields">
             <div className="sign-in__field">
               <BaseInput
+                ref={loginRef}
                 classNameInput="sign-in__input"
                 classNameLabel="sign-in__label visually-hidden"
                 type="email"
@@ -25,6 +58,7 @@ function SignInPage() {
             </div>
             <div className="sign-in__field">
               <BaseInput
+                ref={passwordRef}
                 classNameInput="sign-in__input"
                 classNameLabel="sign-in__label visually-hidden"
                 type="password"
@@ -35,7 +69,10 @@ function SignInPage() {
             </div>
           </div>
           <div className="sign-in__submit">
-            <Button className="sign-in__btn" type="submit">
+            <Button
+              className="sign-in__btn"
+              type="submit"
+            >
               Sign in
             </Button>
           </div>

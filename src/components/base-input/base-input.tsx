@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, forwardRef } from 'react';
 
 type BaseInputProps = {
   classNameLabel: string;
@@ -12,23 +12,27 @@ type BaseInputProps = {
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-function BaseInput({
-  placeholder,
-  id,
-  disabled,
-  onChange,
-  value,
-  label,
-  classNameLabel,
-  classNameInput,
-  type,
-}: BaseInputProps): JSX.Element {
-  return (
+const BaseInput = forwardRef<HTMLInputElement, BaseInputProps>(
+  (
+    {
+      placeholder,
+      id,
+      disabled,
+      onChange,
+      value,
+      label,
+      classNameLabel,
+      classNameInput,
+      type,
+    }: BaseInputProps,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ): JSX.Element => (
     <React.Fragment>
       <label className={classNameLabel} htmlFor={id}>
         {label}
       </label>
       <input
+        ref={ref}
         className={classNameInput}
         id={id}
         type={type}
@@ -38,7 +42,9 @@ function BaseInput({
         onChange={onChange}
       />
     </React.Fragment>
-  );
-}
+  )
+);
+
+BaseInput.displayName = 'BaseInput';
 
 export default BaseInput;

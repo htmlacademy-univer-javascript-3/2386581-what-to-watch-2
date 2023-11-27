@@ -1,7 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { getFilmsByGenre } from './action';
-import { getFilmList } from './api-action';
+import { getFilmsByGenre, requireAuthorization, setError } from './actions';
+import { getFilmList, loginAction } from './api-actions';
 import type { MainPageInitialState } from '../types';
+import { AuthorizationStatus } from '../const';
 
 const DEFAULT_GENRE = 'All genres';
 
@@ -10,6 +11,8 @@ const initialState: MainPageInitialState = {
   genre: DEFAULT_GENRE,
   filmsByGenre: [],
   isLoading: false,
+  authorizationStatus: AuthorizationStatus.Unknown,
+  error: null,
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -30,6 +33,21 @@ const reducer = createReducer(initialState, (builder) => {
       state.isLoading = false;
       state.films = action.payload;
       state.filmsByGenre = state.films;
+    })
+    .addCase(loginAction.pending, (state) => {
+      state.authorizationStatus = AuthorizationStatus.NoAuth;
+    })
+    .addCase(loginAction.fulfilled, (state) => {
+      state.authorizationStatus = AuthorizationStatus.Auth;
+    })
+    .addCase(loginAction.rejected, (state) => {
+      state.authorizationStatus = AuthorizationStatus.NoAuth;
+    })
+    .addCase(requireAuthorization, (state, action) => {
+      state.authorizationStatus = action.payload;
+    })
+    .addCase(setError, (state, action) => {
+      state.error = action.payload;
     });
 });
 

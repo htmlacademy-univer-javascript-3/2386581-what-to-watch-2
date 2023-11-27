@@ -11,6 +11,6 @@ export const saveToken = (token: Token): void => {
   localStorage.setItem(AUTH_TOKEN, token);
 };
 
-export const dremoveToken = (): void => {
+export const removeToken = (): void => {
   localStorage.removeItem(AUTH_TOKEN);
 };
