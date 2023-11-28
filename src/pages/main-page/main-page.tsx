@@ -3,6 +3,7 @@ import MainFimCard from '../../components/main-film-card/main-film-card';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import type { MainFim } from '../../types';
+import FilmCardBackground from '../../components/film-card-background/film-card-background';
 
 type MainPageProps = {
   mainFilm: MainFim;
@@ -107,12 +108,10 @@ function MainPage({ mainFilm }: MainPageProps): JSX.Element {
       </div>
 
       <section className="film-card">
-        <div className="film-card__bg">
-          <img
-            src="img/bg-the-grand-budapest-hotel.jpg"
-            alt="The Grand Budapest Hotel"
-          />
-        </div>
+        <FilmCardBackground
+          src="img/bg-the-grand-budapest-hotel.jpg"
+          alt="The Grand Budapest Hotel"
+        />
 
         <h1 className="visually-hidden">WTW</h1>
 

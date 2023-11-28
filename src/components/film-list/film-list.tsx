@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
-
 import CardItem from '../card-item/card-item';
+
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import type { FilmInfo, FilmPreview } from '../../types';
-import { filmCards } from '../../mocks/data.json';
+import { getFilmList } from '../../store/api-actions';
+import { useAppSelector, useAppDispatch } from '../../hooks/store';
 
 type CardsFilmProps = {
   maxFilms?: number;
@@ -11,16 +12,19 @@ type CardsFilmProps = {
 };
 
 function FilmList({
-  maxFilms = filmCards.length,
+  maxFilms,
   moreLikeThisGenre,
   filmsByGenre,
 }: CardsFilmProps): JSX.Element {
   const [activeFilmCard, setActiveFilmCard] = useState<string>('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const dispatch = useAppDispatch();
+  const filmList = useAppSelector((state) => state.films);
+
   const filteredFilms: FilmPreview[] = moreLikeThisGenre
-    ? filmCards.filter((film) => film.genre === moreLikeThisGenre)
-    : filmsByGenre || filmCards;
+    ? filmList.filter((film) => film.genre === moreLikeThisGenre)
+    : filmsByGenre || filmList;
 
   const handleActiveFilmCard = (filmId: string) => {
     if (filmId) {
@@ -39,6 +43,10 @@ function FilmList({
     },
     []
   );
+
+  useLayoutEffect(() => {
+    dispatch(getFilmList());
+  }, [dispatch]);
 
   return (
     <div className="catalog__films-list">

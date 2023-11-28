@@ -1,6 +1,8 @@
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
+import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import type { FilmPreview } from '../../types';
+import FilmCardBackground from '../../components/film-card-background/film-card-background';
 
 type AddReviewPageProps = {
   film: FilmPreview;
@@ -98,12 +100,7 @@ function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
 
       <section className="film-card film-card--full">
         <div className="film-card__header">
-          <div className="film-card__bg">
-            <img
-              src="img/bg-the-grand-budapest-hotel.jpg"
-              alt="The Grand Budapest Hotel"
-            />
-          </div>
+          <FilmCardBackground src='img/bg-the-grand-budapest-hotel.jpg' alt='The Grand Budapest Hotel'/>
 
           <h1 className="visually-hidden">WTW</h1>
 
@@ -135,14 +132,11 @@ function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
             </ul>
           </header>
 
-          <div className="film-card__poster film-card__poster--small">
-            <img
-              src={film.previewImage}
-              alt={film.name}
-              width="218"
-              height="327"
-            />
-          </div>
+          <FilmCardPoster
+            previewImage={film.previewImage}
+            alt={film.name}
+            className="film-card__poster--small"
+          />
         </div>
 
         <div className="add-review">

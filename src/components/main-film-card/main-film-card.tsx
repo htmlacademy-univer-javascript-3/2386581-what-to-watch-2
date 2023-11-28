@@ -1,20 +1,17 @@
+import FilmCardPoster from '../film-card-poster/film-card-poster';
 import type { MainFim } from '../../types';
 
 type MainFilmProps = {
   mainFilm: MainFim;
 };
 
-function MainFim({ mainFilm }: MainFilmProps): JSX.Element {
+function MainFimCard({ mainFilm }: MainFilmProps): JSX.Element {
   return (
     <div className="film-card__info">
-      <div className="film-card__poster">
-        <img
-          src="img/the-grand-budapest-hotel-poster.jpg"
-          alt="The Grand Budapest Hotel poster"
-          width="218"
-          height="327"
-        />
-      </div>
+      <FilmCardPoster
+        previewImage="img/the-grand-budapest-hotel-poster.jpg"
+        alt="The Grand Budapest Hotel poster"
+      />
 
       <div className="film-card__desc">
         <h2 className="film-card__title">{mainFilm.name}</h2>
@@ -43,4 +40,4 @@ function MainFim({ mainFilm }: MainFilmProps): JSX.Element {
   );
 }
 
-export default MainFim;
+export default MainFimCard;

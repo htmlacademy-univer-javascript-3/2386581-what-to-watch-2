@@ -9,7 +9,7 @@ import type {
 import { AxiosInstance } from 'axios';
 import { APIRoute, AuthorizationStatus } from '../const';
 import { saveToken, removeToken } from '../services/token';
-import { requireAuthorization, setError } from './actions';
+import { requireAuthorization } from './actions';
 
 export const getFilmList = createAsyncThunk<
   FilmInfo[],

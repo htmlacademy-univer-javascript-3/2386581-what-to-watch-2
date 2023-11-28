@@ -1,7 +1,9 @@
-import FilmList from '../../components/film-list/film-list';
+import MoreLikeThis from '../../components/more-like-this/more-like-this';
 import Tabs from '../../components/tabs/tabs';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
+import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
+import FilmCardBackground from '../../components/film-card-background/film-card-background';
 import type { FilmInfo, Review } from '../../types';
 
 type MoviePageProps = {
@@ -9,19 +11,15 @@ type MoviePageProps = {
   reviews: Review[];
 };
 
-const MORE_FILMS_QUNATITY = 4;
-
 function MoviePage({ filmData, reviews }: MoviePageProps): JSX.Element {
   return (
     <div>
       <section className="film-card film-card--full">
         <div className="film-card__hero">
-          <div className="film-card__bg">
-            <img
-              src="img/bg-the-grand-budapest-hotel.jpg"
-              alt="The Grand Budapest Hotel"
-            />
-          </div>
+          <FilmCardBackground
+            src="img/bg-the-grand-budapest-hotel.jpg"
+            alt="The Grand Budapest Hotel"
+          />
 
           <h1 className="visually-hidden">WTW</h1>
 
@@ -65,14 +63,11 @@ function MoviePage({ filmData, reviews }: MoviePageProps): JSX.Element {
 
         <div className="film-card__wrap film-card__translate-top">
           <div className="film-card__info">
-            <div className="film-card__poster film-card__poster--big">
-              <img
-                src="img/the-grand-budapest-hotel-poster.jpg"
-                alt="The Grand Budapest Hotel poster"
-                width="218"
-                height="327"
-              />
-            </div>
+            <FilmCardPoster
+              previewImage="img/the-grand-budapest-hotel-poster.jpg"
+              alt="The Grand Budapest Hotel poster"
+              className="film-card__poster--big"
+            />
 
             <div className="film-card__desc">
               <Tabs filmData={filmData} reviews={reviews} />
@@ -82,11 +77,7 @@ function MoviePage({ filmData, reviews }: MoviePageProps): JSX.Element {
       </section>
 
       <div className="page-content">
-        <section className="catalog catalog--like-this">
-          <h2 className="catalog__title">More like this</h2>
-
-          <FilmList maxFilms={MORE_FILMS_QUNATITY} />
-        </section>
+        <MoreLikeThis />
 
         <Footer />
       </div>
