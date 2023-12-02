@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AuthorizationStatus } from '../../const';
 
 type UserBlockProps = {
-  authStatus: string;
+  authStatus: AuthorizationStatus;
 };
 
 function UserBlock({ authStatus }: UserBlockProps): JSX.Element {
-  const [label, setLabel] = useState('Sign out');
+  const [label, setLabel] = useState('');
 
-  switch (authStatus) {
-    case AuthorizationStatus.Auth:
-      setLabel('Sign out');
-      break;
-    case AuthorizationStatus.NoAuth:
-      setLabel('Sign out');
-      break;
-  }
+  useEffect(() => {
+    switch (authStatus) {
+      case AuthorizationStatus.Auth:
+        setLabel('Sign out');
+        break;
+      case AuthorizationStatus.NoAuth:
+        setLabel('Sign in');
+        break;
+    }
+  }, [authStatus]);
 
   return (
     <ul className="user-block">

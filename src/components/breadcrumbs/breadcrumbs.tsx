@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
-import type { FilmPreview } from '../../types';
+import type { FilmInfo } from '../../types';
 
 type BreadcrumbsProps = {
-  film: Pick<FilmPreview, 'id' | 'name'>;
+  film: Pick<FilmInfo, 'id' | 'name'>;
   name: string;
 };
 

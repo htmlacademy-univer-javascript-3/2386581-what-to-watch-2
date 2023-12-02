@@ -12,7 +12,7 @@ function Catalog(): JSX.Element {
   const dispatch = useAppDispatch();
   const filmsByGenre = useAppSelector((state) => state.filmsByGenre);
   const filmList = useAppSelector((state) => state.films);
-  const isLoading = useAppSelector((state) => state.isLoading);
+  const isLoading = useAppSelector((state) => state.isFilmsLoading);
 
   const [maxFilms, setMaxFilms] = useState(DEFAULT_LIST_LENGTH);
 

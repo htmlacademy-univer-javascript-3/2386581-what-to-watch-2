@@ -9,41 +9,31 @@ import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
-import { FilmPreview, MainFim, Player, FilmInfo, Review } from '../../types';
+import { Player } from '../../types';
 import { AppRoute } from '../../const';
 
 type AppProps = {
-  mainFilm: MainFim;
-  filmCards: FilmPreview[];
-  myListFilmCards: FilmPreview[];
-  filmData: FilmInfo;
   player: Player;
-  reviews: Review[];
 };
 
 function App({
-  mainFilm,
-  filmCards,
-  myListFilmCards,
-  filmData,
   player,
-  reviews,
 }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Root}
-          element={<MainPage mainFilm={mainFilm} />}
+          element={<MainPage />}
         />
         <Route path={AppRoute.Login} element={<SignInPage />} />
         <Route
           path={AppRoute.Movie}
-          element={<MoviePage filmData={filmData} reviews={reviews} />}
+          element={<MoviePage />}
         />
         <Route
           path={AppRoute.AddReview}
-          element={<AddReviewPage film={filmCards[0]} />}
+          element={<AddReviewPage />}
         />
         <Route
           path={AppRoute.Player}
@@ -53,7 +43,7 @@ function App({
           path={AppRoute.MyList}
           element={
             <PrivateRoute>
-              <MyListPage filmCards={myListFilmCards} />
+              <MyListPage />
             </PrivateRoute>
           }
         />

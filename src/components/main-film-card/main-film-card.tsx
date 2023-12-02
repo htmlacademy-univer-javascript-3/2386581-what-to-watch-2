@@ -1,46 +1,67 @@
-import type { MainFim } from '../../types';
+import FilmCardPoster from '../film-card-poster/film-card-poster';
+import Button from '../button/button';
+
+import { Link } from 'react-router-dom';
+import type { FilmInfo } from '../../types';
+import { AppRoute, AuthorizationStatus } from '../../const';
+import { useAppSelector } from '../../hooks/store';
 
 type MainFilmProps = {
-  mainFilm: MainFim;
+  filmInfo: FilmInfo;
+  isPromo: boolean;
 };
 
-function MainFim({ mainFilm }: MainFilmProps): JSX.Element {
+function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
+  const authorizationStatus = useAppSelector(
+    (state) => state.authorizationStatus
+  );
+
+  const isAuthorized = authorizationStatus === AuthorizationStatus.Auth;
+
   return (
-    <div className="film-card__info">
-      <div className="film-card__poster">
-        <img
-          src="img/the-grand-budapest-hotel-poster.jpg"
-          alt="The Grand Budapest Hotel poster"
-          width="218"
-          height="327"
+    <div className={isPromo ? 'film-card__info' : 'film-card__wrap'}>
+      {isPromo && (
+        <FilmCardPoster
+          previewImage={filmInfo.posterImage}
+          alt={filmInfo.name}
         />
-      </div>
+      )}
 
       <div className="film-card__desc">
-        <h2 className="film-card__title">{mainFilm.name}</h2>
+        <h2 className="film-card__title">{filmInfo.name}</h2>
         <p className="film-card__meta">
-          <span className="film-card__genre">{mainFilm.genre}</span>
-          <span className="film-card__year">{mainFilm.release}</span>
+          <span className="film-card__genre">{filmInfo.genre}</span>
+          <span className="film-card__year">{filmInfo.released}</span>
         </p>
 
         <div className="film-card__buttons">
-          <button className="btn btn--play film-card__button" type="button">
+          <Button className="btn btn--play film-card__button" type="button">
             <svg viewBox="0 0 19 19" width="19" height="19">
               <use xlinkHref="#play-s"></use>
             </svg>
             <span>Play</span>
-          </button>
-          <button className="btn btn--list film-card__button" type="button">
+          </Button>
+
+          <Button className="btn btn--list film-card__button" type="button">
             <svg viewBox="0 0 19 20" width="19" height="20">
               <use xlinkHref="#add"></use>
             </svg>
             <span>My list</span>
             <span className="film-card__count">9</span>
-          </button>
+          </Button>
+
+          {isAuthorized && !isPromo && (
+            <Link
+              to={AppRoute.AddReview.replace(':id', filmInfo.id)}
+              className="btn film-card__button"
+            >
+              Add review
+            </Link>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default MainFim;
+export default MainFimCard;

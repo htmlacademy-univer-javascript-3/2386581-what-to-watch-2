@@ -5,11 +5,12 @@ import type {
   FilmInfo,
   AuthData,
   UserData,
+  Review,
 } from '../types';
 import { AxiosInstance } from 'axios';
 import { APIRoute, AuthorizationStatus } from '../const';
 import { saveToken, removeToken } from '../services/token';
-import { requireAuthorization, setError } from './actions';
+import { requireAuthorization } from './actions';
 
 export const getFilmList = createAsyncThunk<
   FilmInfo[],
@@ -23,6 +24,87 @@ export const getFilmList = createAsyncThunk<
   const { data } = await api.get<FilmInfo[]>(APIRoute.Films);
 
   return data;
+});
+
+export const getFilmInfo = createAsyncThunk<
+  FilmInfo,
+  string,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('/films/id', async (filmId: string, { extra: api }) => {
+  const { data } = await api.get<FilmInfo>(`/films/${filmId}`);
+
+  return data;
+});
+
+export const getPromo = createAsyncThunk<
+  FilmInfo,
+  undefined,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('/films/promo', async (_arg, { extra: api }) => {
+  const { data } = await api.get<FilmInfo>(APIRoute.Promo);
+
+  return data;
+});
+
+export const getSimilar = createAsyncThunk<
+  FilmInfo[],
+  string,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('/films/id/similar', async (filmId: string, { extra: api }) => {
+  const { data } = await api.get<FilmInfo[]>(
+    APIRoute.Similar.replace(':id', filmId)
+  );
+
+  return data;
+});
+
+export const getReviews = createAsyncThunk<
+  Review[],
+  string,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('/comments/id', async (filmId: string, { extra: api }) => {
+  const { data } = await api.get<Review[]>(
+    APIRoute.Reviews.replace(':id', filmId)
+  );
+
+  return data;
+});
+
+export const addReview = createAsyncThunk<
+  void,
+  { comment: string; rating: number; filmId: string },
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('/comments/id', async ({ comment, rating, filmId }, { dispatch, extra: api }) => {
+  await api.post(
+    APIRoute.Reviews.replace(':id', filmId),
+    {
+      comment,
+      rating,
+    }
+  );
+
+  dispatch(getReviews(filmId));
+
 });
 
 export const checkAuthAction = createAsyncThunk<

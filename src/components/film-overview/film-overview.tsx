@@ -32,7 +32,7 @@ function FilmOverview({
 
         <p className="film-card__starring">
           <strong>
-            Starring: 
+            Starring:
             {starring?.map((star) => `${star}, `)}
           </strong>
         </p>

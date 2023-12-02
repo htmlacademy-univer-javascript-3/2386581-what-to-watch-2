@@ -21,10 +21,13 @@ export interface MainPageInitialState {
   films: FilmInfo[];
   genre: string;
   filmsByGenre: FilmInfo[];
-  isLoading: boolean;
+  isFilmsLoading: boolean;
+  isFilmLoading: boolean;
   error: string | null;
-  // film: FilmInfo;
-  // promo: FilmInfo;
+  film: FilmInfo | null;
+  promo: FilmInfo | null;
+  reviews: Review[];
+  similar: FilmInfo[];
 }
 
 export interface FilmPreview {
@@ -36,14 +39,18 @@ export interface FilmPreview {
 }
 
 export interface FilmInfo extends FilmPreview {
-  released?: number;
-  rating?: number;
-  scoresCount?: number;
-  description?: string;
-  director?: string;
-  starring?: string[];
-  runtime?: string;
-  // reviews: Review[];
+  backgroundColor: string;
+  backgroundImage: string;
+  description: string;
+  director: string;
+  isFavorite: boolean;
+  posterImage: string;
+  rating: number;
+  released: number;
+  runTime: number;
+  scoresCount: number;
+  starring: string[];
+  videoLink: string;
 }
 
 export interface MainFim {
@@ -61,7 +68,7 @@ export interface Review {
 }
 export interface ReviewFields {
   rating: number;
-  text: string;
+  comment: string;
 }
 
 export interface Player {

@@ -8,11 +8,11 @@ function PrivateRoute({ children }: PropsWithChildren) {
     (state) => state.authorizationStatus
   );
 
-  return authorizationStatus === AuthorizationStatus.Auth ? (
-    children
-  ) : (
-    <Navigate to={AppRoute.Login} />
-  );
+  if (authorizationStatus === AuthorizationStatus.Auth) {
+    return children as JSX.Element;
+  } else {
+    return <Navigate to={AppRoute.Login} />;
+  }
 }
 
 export default PrivateRoute;
