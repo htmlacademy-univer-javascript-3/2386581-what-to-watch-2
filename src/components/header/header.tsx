@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../logo/logo';
 import UserBlock from '../user-block/user-block';
-import { AuthorizationStatus } from '../../const';
+import { useAppSelector } from '../../hooks/store';
 
 type HeaderProps = {
   children?: React.ReactNode;
@@ -9,13 +9,15 @@ type HeaderProps = {
 };
 
 function Header({ children, className = '' }: HeaderProps) {
+  const authorizationStatus = useAppSelector(
+    (state) => state.authorizationStatus
+  );
   return (
     <header className={`page-header ${className}`}>
       <Logo />
       {children}
-      {!AuthorizationStatus.Unknown && (
-        <UserBlock authStatus={AuthorizationStatus.NoAuth} />
-      )}
+
+      <UserBlock authStatus={authorizationStatus} />
     </header>
   );
 }

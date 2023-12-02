@@ -1,6 +1,13 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { getFilmsByGenre, requireAuthorization, setError } from './actions';
-import { getFilmList, loginAction } from './api-actions';
+import {
+  getFilmList,
+  getFilmInfo,
+  getPromo,
+  getReviews,
+  loginAction,
+  getSimilar
+} from './api-actions';
 import type { MainPageInitialState } from '../types';
 import { AuthorizationStatus } from '../const';
 
@@ -10,9 +17,14 @@ const initialState: MainPageInitialState = {
   films: [],
   genre: DEFAULT_GENRE,
   filmsByGenre: [],
-  isLoading: false,
+  isFilmsLoading: false,
+  isFilmLoading: false,
   authorizationStatus: AuthorizationStatus.Unknown,
   error: null,
+  film: null,
+  promo: null,
+  similar: [],
+  reviews: [],
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -27,12 +39,28 @@ const reducer = createReducer(initialState, (builder) => {
           : state.films.filter((film) => film.genre === genre);
     })
     .addCase(getFilmList.pending, (state) => {
-      state.isLoading = true;
+      state.isFilmsLoading = true;
     })
     .addCase(getFilmList.fulfilled, (state, action) => {
-      state.isLoading = false;
+      state.isFilmsLoading = false;
       state.films = action.payload;
       state.filmsByGenre = state.films;
+    })
+    .addCase(getFilmInfo.pending, (state) => {
+      state.isFilmLoading = true;
+    })
+    .addCase(getFilmInfo.fulfilled, (state, action) => {
+      state.film = action.payload;
+      state.isFilmLoading = false;
+    })
+    .addCase(getPromo.fulfilled, (state, action) => {
+      state.promo = action.payload;
+    })
+    .addCase(getSimilar.fulfilled, (state, action) => {
+      state.similar = action.payload;
+    })
+    .addCase(getReviews.fulfilled, (state, action) => {
+      state.reviews = action.payload;
     })
     .addCase(loginAction.pending, (state) => {
       state.authorizationStatus = AuthorizationStatus.NoAuth;

@@ -4,12 +4,11 @@ import classNames from 'classnames';
 import { MoviePageRoute } from '../../const';
 import FilmOverview from '../film-overview/film-overview';
 import FilmDetails from '../film-details/film-details';
-import FilmReviews from '../film-reviews/film-reviews';
-import type { FilmInfo, Review } from '../../types';
+import ReviewList from '../review-list/review-list';
+import type { FilmInfo } from '../../types';
 
 type TabsProps = {
   filmData: FilmInfo;
-  reviews: Review[];
 };
 
 function Tabs({ filmData }: TabsProps): JSX.Element {
@@ -37,7 +36,7 @@ function Tabs({ filmData }: TabsProps): JSX.Element {
       </nav>
       {acitiveTab === MoviePageRoute.Overview && <FilmOverview {...filmData}/>}
       {acitiveTab === MoviePageRoute.Details && <FilmDetails {...filmData} />}
-      {acitiveTab === MoviePageRoute.Reviews && <FilmReviews />}
+      {acitiveTab === MoviePageRoute.Reviews && <ReviewList filmId={filmData.id}/>}
     </React.Fragment>
   );
 }

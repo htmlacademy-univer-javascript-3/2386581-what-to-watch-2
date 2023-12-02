@@ -13,6 +13,9 @@ export enum APIRoute {
   Films = '/films',
   Login = '/login',
   Logout = '/logout',
+  Promo = '/promo',
+  Similar= '/films/:id/similar',
+  Reviews = '/comments/:id'
 }
 
 export enum MoviePageRoute {
@@ -29,5 +32,5 @@ export enum AuthorizationStatus {
 
 export const INITIAL_REVIEW_STATE: ReviewFields = {
   rating: 0,
-  text: '',
+  comment: '',
 };

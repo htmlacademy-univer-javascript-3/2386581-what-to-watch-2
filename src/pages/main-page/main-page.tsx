@@ -2,14 +2,20 @@ import Catalog from '../../components/catalog/catalog';
 import MainFimCard from '../../components/main-film-card/main-film-card';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import type { MainFim } from '../../types';
 import FilmCardBackground from '../../components/film-card-background/film-card-background';
 
-type MainPageProps = {
-  mainFilm: MainFim;
-};
+import { useLayoutEffect } from 'react';
+import { getPromo } from '../../store/api-actions';
+import { useAppSelector, useAppDispatch } from '../../hooks/store';
 
-function MainPage({ mainFilm }: MainPageProps): JSX.Element {
+function MainPage(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const promo = useAppSelector((state) => state.promo);
+
+  useLayoutEffect(() => {
+    dispatch(getPromo());
+  }, [dispatch]);
+
   return (
     <div>
       <div className="visually-hidden">
@@ -107,20 +113,19 @@ function MainPage({ mainFilm }: MainPageProps): JSX.Element {
         </svg>
       </div>
 
-      <section className="film-card">
-        <FilmCardBackground
-          src="img/bg-the-grand-budapest-hotel.jpg"
-          alt="The Grand Budapest Hotel"
-        />
+      {promo && (
+        <section className="film-card">
+          <FilmCardBackground src={promo.backgroundImage} alt={promo.name} />
 
-        <h1 className="visually-hidden">WTW</h1>
+          <h1 className="visually-hidden">WTW</h1>
 
-        <Header className="film-card__head" />
+          <Header className="film-card__head" />
 
-        <div className="film-card__wrap">
-          <MainFimCard mainFilm={mainFilm} />
-        </div>
-      </section>
+          <div className="film-card__wrap">
+            <MainFimCard filmInfo={promo} isPromo />
+          </div>
+        </section>
+      )}
 
       <div className="page-content">
         <Catalog />

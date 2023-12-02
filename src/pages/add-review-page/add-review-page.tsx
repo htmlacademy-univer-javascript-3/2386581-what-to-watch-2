@@ -1,14 +1,19 @@
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
 import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
-import type { FilmPreview } from '../../types';
+import Loader from '../../components/loader/loader';
+import Header from '../../components/header/header';
 import FilmCardBackground from '../../components/film-card-background/film-card-background';
 
-type AddReviewPageProps = {
-  film: FilmPreview;
-};
+import { useAppSelector } from '../../hooks/store';
 
-function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
+function AddReviewPage(): JSX.Element {
+  const film = useAppSelector((state) => state.film);
+
+  if (!film) {
+    return <Loader />;
+  }
+
   return (
     <div>
       <div className="visually-hidden">
@@ -98,49 +103,28 @@ function AddReviewPage({ film }: AddReviewPageProps): JSX.Element {
         </svg>
       </div>
 
-      <section className="film-card film-card--full">
+      <section
+        className="film-card film-card--full"
+        style={{ background: `${film.backgroundColor}` }}
+      >
         <div className="film-card__header">
-          <FilmCardBackground src='img/bg-the-grand-budapest-hotel.jpg' alt='The Grand Budapest Hotel'/>
+          <FilmCardBackground src={film.backgroundImage} alt={film.name} />
 
           <h1 className="visually-hidden">WTW</h1>
 
-          <header className="page-header">
-            <div className="logo">
-              <a href="main.html" className="logo__link">
-                <span className="logo__letter logo__letter--1">W</span>
-                <span className="logo__letter logo__letter--2">T</span>
-                <span className="logo__letter logo__letter--3">W</span>
-              </a>
-            </div>
-
+          <Header>
             <Breadcrumbs film={film} name="Add review" />
-
-            <ul className="user-block">
-              <li className="user-block__item">
-                <div className="user-block__avatar">
-                  <img
-                    src="img/avatar.jpg"
-                    alt="User avatar"
-                    width="63"
-                    height="63"
-                  />
-                </div>
-              </li>
-              <li className="user-block__item">
-                <a className="user-block__link">Sign out</a>
-              </li>
-            </ul>
-          </header>
+          </Header>
 
           <FilmCardPoster
-            previewImage={film.previewImage}
+            previewImage={film.posterImage}
             alt={film.name}
             className="film-card__poster--small"
           />
         </div>
 
         <div className="add-review">
-          <AddReviewForm />
+          <AddReviewForm filmId={film.id} />
         </div>
       </section>
     </div>

@@ -2,13 +2,13 @@ import type { FilmInfo } from '../../types';
 
 type FilmDetailsProps = Pick<
   FilmInfo,
-  'director' | 'starring' | 'runtime' | 'genre' | 'released'
+  'director' | 'starring' | 'runTime' | 'genre' | 'released'
 >;
 
 function FilmDetails({
   director,
   starring,
-  runtime,
+  runTime,
   genre,
   released,
 }: FilmDetailsProps): JSX.Element {
@@ -30,7 +30,7 @@ function FilmDetails({
       <div className="film-card__text-col">
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
-          <span className="film-card__details-value">{runtime}</span>
+          <span className="film-card__details-value">{runTime}</span>
         </p>
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Genre</strong>
