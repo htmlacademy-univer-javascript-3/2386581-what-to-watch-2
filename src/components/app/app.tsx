@@ -9,16 +9,14 @@ import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
-import { FilmPreview, Player } from '../../types';
+import { Player } from '../../types';
 import { AppRoute } from '../../const';
 
 type AppProps = {
-  myListFilmCards: FilmPreview[];
   player: Player;
 };
 
 function App({
-  myListFilmCards,
   player,
 }: AppProps): JSX.Element {
   return (
@@ -45,7 +43,7 @@ function App({
           path={AppRoute.MyList}
           element={
             <PrivateRoute>
-              <MyListPage filmCards={myListFilmCards} />
+              <MyListPage />
             </PrivateRoute>
           }
         />

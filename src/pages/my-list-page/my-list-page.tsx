@@ -1,13 +1,11 @@
 import FilmList from '../../components/film-list/film-list';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import type { FilmPreview } from '../../types';
+import { useAppSelector } from '../../hooks/store';
 
-type MyListPageProps = {
-  filmCards: FilmPreview[];
-};
+function MyListPage(): JSX.Element {
+  const myList = useAppSelector((state) => state.films);
 
-function MyListPage({ filmCards }: MyListPageProps): JSX.Element {
   return (
     <div className="user-page">
       <Header className="user-page__head">
@@ -19,7 +17,7 @@ function MyListPage({ filmCards }: MyListPageProps): JSX.Element {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <FilmList filmsByGenre={filmCards} />
+        <FilmList filmsByGenre={myList} />
       </section>
 
       <Footer />
