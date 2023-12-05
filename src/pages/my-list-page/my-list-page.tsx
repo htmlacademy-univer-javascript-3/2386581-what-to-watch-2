@@ -2,9 +2,10 @@ import FilmList from '../../components/film-list/film-list';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import { useAppSelector } from '../../hooks/store';
+import { getFilmsByGenre } from '../../store/films/selectors';
 
 function MyListPage(): JSX.Element {
-  const myList = useAppSelector((state) => state.films);
+  const myList = useAppSelector(getFilmsByGenre);
 
   return (
     <div className="user-page">

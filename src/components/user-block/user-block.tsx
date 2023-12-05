@@ -1,33 +1,60 @@
 import { useState, useEffect } from 'react';
-import { AuthorizationStatus } from '../../const';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthorizationStatus, AppRoute } from '../../const';
+import { useAppSelector, useAppDispatch } from '../../hooks/store';
+import {
+  getAvatarUrl,
+  getAuthorizationStatus,
+} from '../../store/user-data/selectors';
+import { logoutAction } from '../../store/api-actions';
 
-type UserBlockProps = {
-  authStatus: AuthorizationStatus;
-};
-
-function UserBlock({ authStatus }: UserBlockProps): JSX.Element {
+function UserBlock(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const [label, setLabel] = useState('');
+  const [avatar, setAvatar] = useState('img/avatar.jpg');
+
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
+  const userAvatar = useAppSelector(getAvatarUrl);
+
+  const handleClick = () => {
+    if (label === 'Sign in') {
+      navigate(AppRoute.Login);
+    } else {
+      dispatch(logoutAction());
+      navigate(AppRoute.Root);
+    }
+  };
 
   useEffect(() => {
-    switch (authStatus) {
+    switch (authorizationStatus) {
       case AuthorizationStatus.Auth:
         setLabel('Sign out');
+        setAvatar(userAvatar);
         break;
       case AuthorizationStatus.NoAuth:
         setLabel('Sign in');
+        setAvatar('img/avatar.jpg');
         break;
     }
-  }, [authStatus]);
+  }, [authorizationStatus, userAvatar]);
 
   return (
     <ul className="user-block">
-      <li className="user-block__item">
+      <Link to={AppRoute.MyList} className="user-block__item">
         <div className="user-block__avatar">
-          <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
+          <img
+            src={avatar}
+            alt="User avatar"
+            width="63"
+            height="63"
+          />
         </div>
-      </li>
-      <li className="user-block__item">
-        <a className="user-block__link">{label}</a>
+      </Link>
+      <li className="user-block__item" onClick={handleClick}>
+        <Link to="#" className="user-block__link">
+          {label}
+        </Link>
       </li>
     </ul>
   );

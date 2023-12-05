@@ -1,9 +1,11 @@
+import Loader from '../loader/loader';
+
 import { useLayoutEffect } from 'react';
 import type { Review } from '../../types';
 import { formatDate } from '../../utils/formatDate';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
 import { getReviews } from '../../store/api-actions';
-import Loader from '../loader/loader';
+import { getReviews as getReviewsState} from '../../store/main-film-data/selectors';
 
 type ReviewListProps = {
   filmId: string;
@@ -34,7 +36,7 @@ function ReviewItem(props: Review): JSX.Element {
 
 function ReviewList({ filmId }: ReviewListProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const reviews = useAppSelector((state) => state.reviews);
+  const reviews = useAppSelector(getReviewsState);
 
   useLayoutEffect(() => {
     dispatch(getReviews(filmId));

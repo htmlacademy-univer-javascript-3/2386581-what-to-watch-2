@@ -5,16 +5,45 @@ export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
+export type UserProcess = {
+  authorizationStatus: AuthorizationStatus;
+};
+
 export type UserData = {
   id: number;
+  avatarUrl: string;
   email: string;
   token: string;
+  name: string;
 };
 
 export type AuthData = {
   login: string;
   password: string;
 };
+
+export interface UserState extends UserData, AuthData, UserProcess {
+  favoriteFilms: FilmInfo[];
+  isLoading: boolean;
+  error: string | null;
+}
+
+export interface FilmsState {
+  films: FilmInfo[];
+  genre: string;
+  filmsByGenre: FilmInfo[];
+  isLoading: boolean;
+  error: string | null;
+  promo: FilmInfo | null;
+}
+
+export interface MainFilmState {
+  isLoading: boolean;
+  error: string | null;
+  film: FilmInfo | null;
+  reviews: Review[];
+  similar: FilmInfo[];
+}
 
 export interface MainPageInitialState {
   authorizationStatus: AuthorizationStatus;

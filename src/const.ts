@@ -34,3 +34,9 @@ export const INITIAL_REVIEW_STATE: ReviewFields = {
   rating: 0,
   comment: '',
 };
+
+export const enum NameSpace {
+  User = 'user',
+  Films = 'films',
+  MainFilm = 'mainFilm',
+}

@@ -6,11 +6,12 @@ import FilmCardBackground from '../../components/film-card-background/film-card-
 
 import { useLayoutEffect } from 'react';
 import { getPromo } from '../../store/api-actions';
+import { getPromo as getPromoState } from '../../store/films/selectors';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
 
 function MainPage(): JSX.Element {
   const dispatch = useAppDispatch();
-  const promo = useAppSelector((state) => state.promo);
+  const promo = useAppSelector(getPromoState);
 
   useLayoutEffect(() => {
     dispatch(getPromo());

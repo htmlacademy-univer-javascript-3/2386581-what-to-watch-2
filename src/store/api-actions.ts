@@ -94,21 +94,20 @@ export const addReview = createAsyncThunk<
     state: State;
     extra: AxiosInstance;
   }
->('/comments/id', async ({ comment, rating, filmId }, { dispatch, extra: api }) => {
-  await api.post(
-    APIRoute.Reviews.replace(':id', filmId),
-    {
+>(
+  '/comments/id',
+  async ({ comment, rating, filmId }, { dispatch, extra: api }) => {
+    await api.post(APIRoute.Reviews.replace(':id', filmId), {
       comment,
       rating,
-    }
-  );
+    });
 
-  dispatch(getReviews(filmId));
-
-});
+    dispatch(getReviews(filmId));
+  }
+);
 
 export const checkAuthAction = createAsyncThunk<
-  void,
+  UserData | null,
   undefined,
   {
     dispatch: AppDispatch;
@@ -117,11 +116,15 @@ export const checkAuthAction = createAsyncThunk<
   }
 >('user/checkAuth', async (_arg, { dispatch, extra: api }) => {
   try {
-    await api.get<AuthData>(APIRoute.Login);
+    const { data } = await api.get<UserData>(APIRoute.Login);
     dispatch(requireAuthorization(AuthorizationStatus.Auth));
+
+    return data;
   } catch {
     dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
   }
+
+  return null;
 });
 
 export const loginAction = createAsyncThunk<
