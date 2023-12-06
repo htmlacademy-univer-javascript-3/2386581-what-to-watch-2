@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import type { FilmInfo } from '../../types';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import { useAppSelector } from '../../hooks/store';
+import { getAuthorizationStatus } from '../../store/user-data/selectors';
 
 type MainFilmProps = {
   filmInfo: FilmInfo;
@@ -12,9 +13,7 @@ type MainFilmProps = {
 };
 
 function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
-  const authorizationStatus = useAppSelector(
-    (state) => state.authorizationStatus
-  );
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
 
   const isAuthorized = authorizationStatus === AuthorizationStatus.Auth;
 

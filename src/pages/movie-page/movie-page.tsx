@@ -4,17 +4,18 @@ import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import FilmCardPoster from '../../components/film-card-poster/film-card-poster';
 import FilmCardBackground from '../../components/film-card-background/film-card-background';
+import MainFimCard from '../../components/main-film-card/main-film-card';
+import Loader from '../../components/loader/loader';
 
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFilmInfo } from '../../store/api-actions';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
-import MainFimCard from '../../components/main-film-card/main-film-card';
-import Loader from '../../components/loader/loader';
+import { getFilmInfo as getFilmInfoState } from '../../store/main-film-data/selectors';
 
 function MoviePage(): JSX.Element {
   const dispatch = useAppDispatch();
-  const filmInfo = useAppSelector((state) => state.film);
+  const filmInfo = useAppSelector(getFilmInfoState);
   const { id } = useParams();
 
   useEffect(() => {

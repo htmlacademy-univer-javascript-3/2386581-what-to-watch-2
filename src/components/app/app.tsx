@@ -33,7 +33,11 @@ function App({
         />
         <Route
           path={AppRoute.AddReview}
-          element={<AddReviewPage />}
+          element={
+            <PrivateRoute>
+              <AddReviewPage />
+            </PrivateRoute>
+          }
         />
         <Route
           path={AppRoute.Player}

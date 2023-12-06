@@ -6,9 +6,10 @@ import Header from '../../components/header/header';
 import FilmCardBackground from '../../components/film-card-background/film-card-background';
 
 import { useAppSelector } from '../../hooks/store';
+import { getFilmInfo } from '../../store/main-film-data/selectors';
 
 function AddReviewPage(): JSX.Element {
-  const film = useAppSelector((state) => state.film);
+  const film = useAppSelector(getFilmInfo);
 
   if (!film) {
     return <Loader />;

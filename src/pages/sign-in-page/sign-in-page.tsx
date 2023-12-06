@@ -8,12 +8,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import { loginAction } from '../../store/api-actions';
 import { AppRoute, AuthorizationStatus } from '../../const';
+import { getAuthorizationStatus } from '../../store/user-data/selectors';
 
 function SignInPage() {
   const loginRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
 
-  const isAuthorized = useAppSelector((state) => state.authorizationStatus);
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -31,10 +32,10 @@ function SignInPage() {
   };
 
   useEffect(() => {
-    if (isAuthorized === AuthorizationStatus.Auth) {
+    if (authorizationStatus === AuthorizationStatus.Auth) {
       navigate(AppRoute.Root);
     }
-  }, [isAuthorized, navigate]);
+  }, [authorizationStatus, navigate]);
 
   return (
     <div className="user-page">
