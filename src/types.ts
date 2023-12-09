@@ -23,7 +23,7 @@ export type AuthData = {
 };
 
 export interface UserState extends UserData, AuthData, UserProcess {
-  favoriteFilms: FilmInfo[];
+  favoriteFilms: FilmPreview[];
   isLoading: boolean;
   error: string | null;
 }

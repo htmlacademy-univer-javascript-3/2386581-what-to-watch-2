@@ -3,7 +3,7 @@ import { useMemo, FormEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import { getFilmsByGenre } from '../../store/actions';
 import { getGenre } from '../../store/films/selectors';
-import type { FilmInfo } from '../../types';
+import type { FilmPreview } from '../../types';
 
 type GenreItemProps = {
   genre: string;
@@ -11,7 +11,7 @@ type GenreItemProps = {
 };
 
 type GenreListProps = {
-  filmsList: FilmInfo[];
+  filmsList: FilmPreview[];
 };
 
 function GenreItem({ genre, isActive }: GenreItemProps): JSX.Element {

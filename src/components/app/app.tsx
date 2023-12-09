@@ -46,9 +46,7 @@ function App({
         <Route
           path={AppRoute.MyList}
           element={
-            <PrivateRoute>
-              <MyListPage />
-            </PrivateRoute>
+            <MyListPage />
           }
         />
         <Route path="*" element={<ErrorPage />} />

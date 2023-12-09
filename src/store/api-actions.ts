@@ -6,11 +6,12 @@ import type {
   AuthData,
   UserData,
   Review,
+  FilmPreview,
 } from '../types';
 import { AxiosInstance } from 'axios';
 import { APIRoute, AuthorizationStatus } from '../const';
 import { saveToken, removeToken } from '../services/token';
-import { requireAuthorization } from './actions';
+import { requireAuthorization, updateFilmFavoriteStatus } from './actions';
 
 export const getFilmList = createAsyncThunk<
   FilmInfo[],
@@ -78,7 +79,7 @@ export const getReviews = createAsyncThunk<
     state: State;
     extra: AxiosInstance;
   }
->('/comments/id', async (filmId: string, { extra: api }) => {
+>('/comments/getReviews', async (filmId: string, { extra: api }) => {
   const { data } = await api.get<Review[]>(
     APIRoute.Reviews.replace(':id', filmId)
   );
@@ -87,7 +88,7 @@ export const getReviews = createAsyncThunk<
 });
 
 export const addReview = createAsyncThunk<
-  void,
+  Review,
   { comment: string; rating: number; filmId: string },
   {
     dispatch: AppDispatch;
@@ -95,15 +96,12 @@ export const addReview = createAsyncThunk<
     extra: AxiosInstance;
   }
 >(
-  '/comments/id',
-  async ({ comment, rating, filmId }, { dispatch, extra: api }) => {
+  '/comments/addReview',
+  async ({ comment, rating, filmId }, { extra: api }) =>
     await api.post(APIRoute.Reviews.replace(':id', filmId), {
       comment,
       rating,
-    });
-
-    dispatch(getReviews(filmId));
-  }
+    })
 );
 
 export const checkAuthAction = createAsyncThunk<
@@ -143,6 +141,7 @@ export const loginAction = createAsyncThunk<
     } = await api.post<UserData>(APIRoute.Login, { email, password });
     saveToken(token);
     dispatch(requireAuthorization(AuthorizationStatus.Auth));
+    dispatch(checkAuthAction());
   }
 );
 
@@ -159,3 +158,46 @@ export const logoutAction = createAsyncThunk<
   removeToken();
   dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
 });
+
+export const getFavorite = createAsyncThunk<
+  FilmPreview[],
+  undefined,
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>('user/getFavorite', async (_arg, { extra: api }) => {
+  const { data } = await api.get<FilmPreview[]>(APIRoute.Favorite);
+
+  return data;
+});
+
+export const toggleFavorite = createAsyncThunk<
+  FilmPreview,
+  { filmId: string; status: boolean },
+  {
+    dispatch: AppDispatch;
+    state: State;
+    extra: AxiosInstance;
+  }
+>(
+  'user/toggleFavorite',
+  async ({ filmId, status }, { dispatch, extra: api }) => {
+    let requestStatus = 0;
+    if (status) {
+      requestStatus = 1;
+    }
+    const { data } = await api.post<FilmPreview>(
+      `${APIRoute.AddFavorite.replace(':filmId', filmId)}${requestStatus}`,
+      {
+        filmId,
+        status,
+      }
+    );
+
+    dispatch(updateFilmFavoriteStatus({ filmId, isFavorite: status }));
+
+    return data;
+  }
+);

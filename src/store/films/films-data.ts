@@ -5,7 +5,7 @@ import {
   getFilmList,
   getPromo,
 } from '../api-actions';
-import { getFilmsByGenre, setError } from '../actions';
+import { getFilmsByGenre, setError, updateFilmFavoriteStatus } from '../actions';
 
 const DEFAULT_GENRE = 'All genres';
 
@@ -46,6 +46,11 @@ export const filmsData = createSlice({
       })
       .addCase(setError, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(updateFilmFavoriteStatus, (state, action) => {
+        if (state.promo && state.promo.id === action.payload.filmId) {
+          state.promo.isFavorite = action.payload.isFavorite;
+        }
       });
   },
 });

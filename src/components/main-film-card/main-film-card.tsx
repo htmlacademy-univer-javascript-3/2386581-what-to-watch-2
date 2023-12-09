@@ -1,11 +1,14 @@
 import FilmCardPoster from '../film-card-poster/film-card-poster';
 import Button from '../button/button';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import type { FilmInfo } from '../../types';
 import { AppRoute, AuthorizationStatus } from '../../const';
-import { useAppSelector } from '../../hooks/store';
+import { useAppSelector, useAppDispatch } from '../../hooks/store';
 import { getAuthorizationStatus } from '../../store/user-data/selectors';
+import { toggleFavorite } from '../../store/api-actions';
+import { getFavoriteList } from '../../store/user-data/selectors';
+import { FormEvent } from 'react';
 
 type MainFilmProps = {
   filmInfo: FilmInfo;
@@ -13,9 +16,22 @@ type MainFilmProps = {
 };
 
 function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const authorizationStatus = useAppSelector(getAuthorizationStatus);
+  const favoriteList = useAppSelector(getFavoriteList);
 
   const isAuthorized = authorizationStatus === AuthorizationStatus.Auth;
+
+  const handleToggleFavorite = (event: FormEvent<Element>) => {
+    event.preventDefault();
+    if (!isAuthorized) {
+      navigate(AppRoute.Login);
+    }
+    dispatch(
+      toggleFavorite({ status: !filmInfo.isFavorite, filmId: filmInfo.id })
+    );
+  };
 
   return (
     <div className={isPromo ? 'film-card__info' : 'film-card__wrap'}>
@@ -41,12 +57,22 @@ function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
             <span>Play</span>
           </Button>
 
-          <Button className="btn btn--list film-card__button" type="button">
-            <svg viewBox="0 0 19 20" width="19" height="20">
-              <use xlinkHref="#add"></use>
-            </svg>
+          <Button
+            className="btn btn--list film-card__button"
+            type="button"
+            onClick={handleToggleFavorite}
+          >
+            {filmInfo.isFavorite ? (
+              <svg viewBox="0 0 18 14" width="18" height="14">
+                <use xlinkHref="#in-list"></use>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 19 20" width="19" height="20">
+                <use xlinkHref="#add"></use>
+              </svg>
+            )}
             <span>My list</span>
-            <span className="film-card__count">9</span>
+            <span className="film-card__count">{favoriteList?.length}</span>
           </Button>
 
           {isAuthorized && !isPromo && (
