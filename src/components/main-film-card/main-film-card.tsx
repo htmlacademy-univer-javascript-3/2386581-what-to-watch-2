@@ -54,7 +54,12 @@ function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
             <svg viewBox="0 0 19 19" width="19" height="19">
               <use xlinkHref="#play-s"></use>
             </svg>
-            <span>Play</span>
+            <Link
+              to={AppRoute.Player.replace(':id', `${filmInfo.id}`)}
+              style={{ textDecoration: 'none', color: '#eee5b5' }}
+            >
+              <span>Play</span>
+            </Link>
           </Button>
 
           <Button

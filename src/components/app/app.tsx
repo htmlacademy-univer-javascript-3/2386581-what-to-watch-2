@@ -1,5 +1,3 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import MainPage from '../../pages/main-page/main-page';
 import AddReviewPage from '../../pages/add-review-page/add-review-page';
 import MoviePage from '../../pages/movie-page/movie-page';
@@ -9,16 +7,10 @@ import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
 import PrivateRoute from '../privat-route/privat-route';
 
-import { Player } from '../../types';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppRoute } from '../../const';
 
-type AppProps = {
-  player: Player;
-};
-
-function App({
-  player,
-}: AppProps): JSX.Element {
+function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -41,12 +33,14 @@ function App({
         />
         <Route
           path={AppRoute.Player}
-          element={<PlayerPage player={player} />}
+          element={<PlayerPage />}
         />
         <Route
           path={AppRoute.MyList}
           element={
-            <MyListPage />
+            <PrivateRoute>
+              <MyListPage />
+            </PrivateRoute>
           }
         />
         <Route path="*" element={<ErrorPage />} />

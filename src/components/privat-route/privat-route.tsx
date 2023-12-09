@@ -1,3 +1,5 @@
+import Loader from '../loader/loader';
+
 import { PropsWithChildren, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { AppRoute, AuthorizationStatus } from '../../const';
@@ -13,6 +15,9 @@ function PrivateRoute({ children }: PropsWithChildren) {
     dispatch(checkAuthAction());
   }, [dispatch, authorizationStatus]);
 
+  if (authorizationStatus === AuthorizationStatus.Unknown) {
+    return <Loader />;
+  }
   if (authorizationStatus === AuthorizationStatus.Auth) {
     return children as JSX.Element;
   } else {
