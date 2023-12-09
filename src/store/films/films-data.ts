@@ -11,7 +11,7 @@ const DEFAULT_GENRE = 'All genres';
 
 const initialState: FilmsState = {
   films: [],
-  genre: '',
+  genre: DEFAULT_GENRE,
   filmsByGenre: [],
   isLoading: false,
   error: null,

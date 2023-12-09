@@ -7,8 +7,9 @@ import { AppRoute, AuthorizationStatus } from '../../const';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
 import { getAuthorizationStatus } from '../../store/user-data/selectors';
 import { toggleFavorite } from '../../store/api-actions';
-import { getFavoriteList } from '../../store/user-data/selectors';
-import { FormEvent } from 'react';
+import { getFavoriteList as getFavoriteListState } from '../../store/user-data/selectors';
+import { getFavorite } from '../../store/api-actions';
+import { FormEvent, useEffect } from 'react';
 
 type MainFilmProps = {
   filmInfo: FilmInfo;
@@ -19,7 +20,7 @@ function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const authorizationStatus = useAppSelector(getAuthorizationStatus);
-  const favoriteList = useAppSelector(getFavoriteList);
+  const favoriteList = useAppSelector(getFavoriteListState);
 
   const isAuthorized = authorizationStatus === AuthorizationStatus.Auth;
 
@@ -32,6 +33,10 @@ function MainFimCard({ filmInfo, isPromo }: MainFilmProps): JSX.Element {
       toggleFavorite({ status: !filmInfo.isFavorite, filmId: filmInfo.id })
     );
   };
+
+  useEffect(() => {
+    dispatch(getFavorite());
+  }, [dispatch, favoriteList]);
 
   return (
     <div className={isPromo ? 'film-card__info' : 'film-card__wrap'}>

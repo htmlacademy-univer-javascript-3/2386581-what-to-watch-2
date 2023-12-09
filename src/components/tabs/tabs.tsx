@@ -11,7 +11,7 @@ type TabsProps = {
   filmData: FilmInfo;
 };
 
-function Tabs({ filmData }: TabsProps): JSX.Element {
+function TabsComponent({ filmData }: TabsProps): JSX.Element {
   const [acitiveTab, setActiveTab] = useState('Overview');
 
   return (
@@ -34,11 +34,15 @@ function Tabs({ filmData }: TabsProps): JSX.Element {
           ))}
         </ul>
       </nav>
-      {acitiveTab === MoviePageRoute.Overview && <FilmOverview {...filmData}/>}
+      {acitiveTab === MoviePageRoute.Overview && <FilmOverview {...filmData} />}
       {acitiveTab === MoviePageRoute.Details && <FilmDetails {...filmData} />}
-      {acitiveTab === MoviePageRoute.Reviews && <ReviewList filmId={filmData.id}/>}
+      {acitiveTab === MoviePageRoute.Reviews && (
+        <ReviewList filmId={filmData.id} />
+      )}
     </React.Fragment>
   );
 }
+
+const Tabs = React.memo(TabsComponent);
 
 export default Tabs;

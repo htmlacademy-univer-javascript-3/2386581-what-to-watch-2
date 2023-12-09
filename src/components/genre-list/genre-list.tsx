@@ -39,6 +39,7 @@ function GenreItem({ genre, isActive }: GenreItemProps): JSX.Element {
 
 function GenreList({ filmsList }: GenreListProps): JSX.Element {
   const activeGenre = useAppSelector(getGenre);
+
   const genreList = useMemo(
     () =>
       ['All genres', ...new Set(filmsList.map((film) => film.genre))].splice(

@@ -7,7 +7,7 @@ type HeaderProps = {
   className?: string;
 };
 
-function HeaderItem({ children, className = '' }: HeaderProps) {
+function HeaderComponent({ children, className = '' }: HeaderProps) {
   return (
     <header className={`page-header ${className}`}>
       <Logo />
@@ -18,6 +18,6 @@ function HeaderItem({ children, className = '' }: HeaderProps) {
   );
 }
 
-const Header = React.memo(HeaderItem);
+const Header = React.memo(HeaderComponent);
 
 export default Header;

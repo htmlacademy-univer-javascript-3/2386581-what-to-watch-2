@@ -1,6 +1,6 @@
 import Loader from '../loader/loader';
 
-import { useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import type { Review } from '../../types';
 import { formatDate } from '../../utils/formatDate';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
@@ -34,7 +34,7 @@ function ReviewItem(props: Review): JSX.Element {
   );
 }
 
-function ReviewList({ filmId }: ReviewListProps): JSX.Element {
+function ReviewListComponent({ filmId }: ReviewListProps): JSX.Element {
   const dispatch = useAppDispatch();
   const reviews = useAppSelector(getReviewsState);
 
@@ -61,5 +61,7 @@ function ReviewList({ filmId }: ReviewListProps): JSX.Element {
     </div>
   );
 }
+
+const ReviewList = React.memo(ReviewListComponent);
 
 export default ReviewList;

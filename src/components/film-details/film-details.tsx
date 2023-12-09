@@ -1,11 +1,12 @@
 import type { FilmInfo } from '../../types';
+import React from 'react';
 
 type FilmDetailsProps = Pick<
   FilmInfo,
   'director' | 'starring' | 'runTime' | 'genre' | 'released'
 >;
 
-function FilmDetails({
+function FilmDetailsComponent({
   director,
   starring,
   runTime,
@@ -44,5 +45,7 @@ function FilmDetails({
     </div>
   );
 }
+
+const FilmDetails = React.memo(FilmDetailsComponent);
 
 export default FilmDetails;

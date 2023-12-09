@@ -7,7 +7,7 @@ import FilmCardBackground from '../../components/film-card-background/film-card-
 import MainFimCard from '../../components/main-film-card/main-film-card';
 import Loader from '../../components/loader/loader';
 
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFilmInfo } from '../../store/api-actions';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
@@ -18,7 +18,7 @@ function MoviePage(): JSX.Element {
   const filmInfo = useAppSelector(getFilmInfoState);
   const { id } = useParams();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (id) {
       dispatch(getFilmInfo(id));
     }
