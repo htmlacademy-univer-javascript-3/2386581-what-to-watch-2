@@ -15,7 +15,9 @@ export enum APIRoute {
   Logout = '/logout',
   Promo = '/promo',
   Similar= '/films/:id/similar',
-  Reviews = '/comments/:id'
+  Reviews = '/comments/:id',
+  Favorite= '/favorite',
+  AddFavorite= '/favorite/:filmId/',
 }
 
 export enum MoviePageRoute {

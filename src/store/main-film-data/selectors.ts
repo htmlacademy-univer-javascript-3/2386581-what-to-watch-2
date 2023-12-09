@@ -9,3 +9,5 @@ export const getSimilar = (state: State): FilmInfo[] =>
   state[NameSpace.MainFilm].similar;
 export const getMainFilmError = (state: State): string | null =>
   state[NameSpace.MainFilm].error;
+export const getIsLoading = (state: State): boolean =>
+  state[NameSpace.MainFilm].isLoading;

@@ -1,8 +1,8 @@
 import { NameSpace } from '../../const';
-import type { State, FilmInfo } from '../../types';
+import type { State, FilmInfo, FilmPreview } from '../../types';
 
-export const getFilms = (state: State): FilmInfo[] => state[NameSpace.Films].films;
-export const getFilmsByGenre = (state: State): FilmInfo[] =>
+export const getFilms = (state: State): FilmPreview[] => state[NameSpace.Films].films;
+export const getFilmsByGenre = (state: State): FilmPreview[] =>
   state[NameSpace.Films].filmsByGenre;
 export const getIsLoading = (state: State): boolean =>
   state[NameSpace.Films].isLoading;

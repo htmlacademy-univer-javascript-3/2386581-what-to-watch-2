@@ -1,24 +1,27 @@
 import React from 'react';
 import type { FilmInfo } from '../../types';
+import { formatRating } from '../../utils/formatRating';
 
 type FilmOverviewProps = Pick<
   FilmInfo,
   'rating' | 'description' | 'director' | 'starring' | 'scoresCount'
 >;
 
-function FilmOverview({
+function FilmOverviewComponent({
   rating,
   scoresCount,
   description,
   director,
   starring,
-}: FilmOverviewProps): JSX.Element {
+}: FilmOverviewProps) {
+  const formatedRating = formatRating(rating);
+
   return (
     <React.Fragment>
       <div className="film-rating">
         <div className="film-rating__score">{rating}</div>
         <p className="film-rating__meta">
-          <span className="film-rating__level">Very good</span>
+          <span className="film-rating__level">{formatedRating}</span>
           <span className="film-rating__count">{scoresCount} ratings</span>
         </p>
       </div>
@@ -40,5 +43,7 @@ function FilmOverview({
     </React.Fragment>
   );
 }
+
+const FilmOverview = React.memo(FilmOverviewComponent);
 
 export default FilmOverview;

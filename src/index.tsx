@@ -2,7 +2,6 @@ import ErrorMessage from './components/error-message/error-message';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import { player } from './mocks/player.json';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { checkAuthAction } from './store/api-actions';
@@ -17,9 +16,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ErrorMessage />
-      <App
-        player={player}
-      />
+      <App />
     </Provider>
   </React.StrictMode>
 );

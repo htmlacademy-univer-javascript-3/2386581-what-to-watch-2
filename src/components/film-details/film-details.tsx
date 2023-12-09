@@ -1,11 +1,12 @@
 import type { FilmInfo } from '../../types';
+import React from 'react';
 
 type FilmDetailsProps = Pick<
   FilmInfo,
   'director' | 'starring' | 'runTime' | 'genre' | 'released'
 >;
 
-function FilmDetails({
+function FilmDetailsComponent({
   director,
   starring,
   runTime,
@@ -22,7 +23,7 @@ function FilmDetails({
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Starring</strong>
           <span className="film-card__details-value">
-            <div>{starring?.map((star) => `${star}, `)}</div>
+            <span>{starring?.map((star) => `${star}, `)}</span>
           </span>
         </p>
       </div>
@@ -44,5 +45,7 @@ function FilmDetails({
     </div>
   );
 }
+
+const FilmDetails = React.memo(FilmDetailsComponent);
 
 export default FilmDetails;

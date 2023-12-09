@@ -1,12 +1,12 @@
 import CardItem from '../card-item/card-item';
 
 import { useState, useEffect, useRef } from 'react';
-import type { FilmInfo } from '../../types';
+import type { FilmPreview } from '../../types';
 import Loader from '../loader/loader';
 
 type CardsFilmProps = {
   maxFilms?: number;
-  filmsByGenre?: FilmInfo[];
+  filmsByGenre?: FilmPreview[];
 };
 
 function FilmList({

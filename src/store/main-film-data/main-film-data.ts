@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { MainFilmState } from '../../types';
 import { NameSpace } from '../../const';
-import { getFilmInfo, getReviews, getSimilar } from '../api-actions';
-import { setError } from '../actions';
+import { getFilmInfo, getReviews, addReview, getSimilar } from '../api-actions';
+import { setError, updateFilmFavoriteStatus } from '../actions';
 
 const initialState: MainFilmState = {
   isLoading: false,
@@ -28,11 +28,19 @@ export const mainFilmData = createSlice({
       .addCase(getReviews.fulfilled, (state, action) => {
         state.reviews = action.payload;
       })
+      .addCase(addReview.fulfilled, (state, action) => {
+        state.reviews.push(action.payload);
+      })
       .addCase(getSimilar.fulfilled, (state, action) => {
         state.similar = action.payload;
       })
       .addCase(setError, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(updateFilmFavoriteStatus, (state, action) => {
+        if (state.film && state.film.id === action.payload.filmId) {
+          state.film.isFavorite = action.payload.isFavorite;
+        }
       });
   },
 });
