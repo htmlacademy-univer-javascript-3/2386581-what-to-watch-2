@@ -46,6 +46,8 @@ export const userData = createSlice({
           state.avatarUrl = action.payload.avatarUrl;
           state.token = action.payload.token;
           state.authorizationStatus = AuthorizationStatus.Auth;
+        } else {
+          state.authorizationStatus = AuthorizationStatus.NoAuth;
         }
       })
       .addCase(logoutAction.fulfilled, (state) => {
