@@ -1,4 +1,5 @@
 import type { FilmInfo } from '../../types';
+import { formatToHoursAndMinutes } from '../../utils/formatToHoursAndMinutes';
 import React from 'react';
 
 type FilmDetailsProps = Pick<
@@ -31,7 +32,9 @@ function FilmDetailsComponent({
       <div className="film-card__text-col">
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
-          <span className="film-card__details-value">{runTime}</span>
+          <span className="film-card__details-value">
+            {formatToHoursAndMinutes(runTime)}
+          </span>
         </p>
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Genre</strong>

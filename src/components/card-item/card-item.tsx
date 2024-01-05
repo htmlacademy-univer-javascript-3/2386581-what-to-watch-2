@@ -22,24 +22,24 @@ function CardItem({
       onMouseOver={() => onHover(id)}
       onMouseLeave={() => onHover('')}
     >
-      {isPlayerActive ? (
-        <VideoPlayer
-          previewVideoLink={previewVideoLink}
-          posterImage={previewImage}
-        />
-      ) : (
-        <div className="small-film-card__image">
-          <img src={previewImage} alt={name} width="280" height="175" />
-        </div>
-      )}
-      <h3 className="small-film-card__title">
-        <Link
-          to={AppRoute.Movie.replace(':id', id)}
-          className="small-film-card__link"
-        >
-          {name}
-        </Link>
-      </h3>
+      <Link
+        to={AppRoute.Movie.replace(':id', id)}
+        style={{ textDecoration: 'none', color: '#c9b37e' }}
+      >
+        {isPlayerActive ? (
+          <VideoPlayer
+            previewVideoLink={previewVideoLink}
+            posterImage={previewImage}
+          />
+        ) : (
+          <div className="small-film-card__image">
+            <img src={previewImage} alt={name} width="280" height="175" />
+          </div>
+        )}
+        <h3 className="small-film-card__title">
+          <div className="small-film-card__link">{name}</div>
+        </h3>
+      </Link>
     </article>
   );
 }

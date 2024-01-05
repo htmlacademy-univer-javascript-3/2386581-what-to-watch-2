@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useMemo, FormEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
-import { getFilmsByGenre } from '../../store/actions';
 import { getGenre } from '../../store/films/selectors';
 import type { FilmPreview } from '../../types';
+import { getFilmsByGenre } from '../../store/films/films-data';
 
 type GenreItemProps = {
   genre: string;

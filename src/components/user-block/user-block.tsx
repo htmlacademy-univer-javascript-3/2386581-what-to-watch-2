@@ -15,7 +15,7 @@ function UserBlock(): JSX.Element {
   const userAvatar = useAppSelector(getAvatarUrl);
 
   const handleClick = () => {
-    if (AuthorizationStatus.NoAuth) {
+    if (authorizationStatus === AuthorizationStatus.NoAuth) {
       navigate(AppRoute.Login);
     } else {
       dispatch(logoutAction());

@@ -1,5 +1,5 @@
 export const formatRating = (rating: number) => {
-  if (rating >= 10) {
+  if (rating === 10) {
     return 'Awesome';
   } else if (rating >= 8) {
     return 'Very good';
@@ -9,5 +9,5 @@ export const formatRating = (rating: number) => {
     return 'Normal';
   }
 
-  return '';
+  return 'Bad';
 };

@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FilmsState } from '../../types';
 import { NameSpace } from '../../const';
+import { getFilmList, getPromo } from '../api-actions';
 import {
-  getFilmList,
-  getPromo,
-} from '../api-actions';
-import { getFilmsByGenre, setError, updateFilmFavoriteStatus } from '../actions';
+  setError,
+  updateFilmFavoriteStatus,
+} from '../actions';
 
 const DEFAULT_GENRE = 'All genres';
 
@@ -21,18 +21,19 @@ const initialState: FilmsState = {
 export const filmsData = createSlice({
   name: NameSpace.Films,
   initialState,
-  reducers: {},
+  reducers: {
+    getFilmsByGenre: (state, action: PayloadAction<{ genre: string }>) => {
+      const { genre } = action.payload;
+
+      state.genre = genre;
+      state.filmsByGenre =
+        genre === DEFAULT_GENRE
+          ? state.films
+          : state.films.filter((film) => film.genre === genre);
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(getFilmsByGenre, (state, action) => {
-        const { genre } = action.payload;
-
-        state.genre = genre;
-        state.filmsByGenre =
-          genre === DEFAULT_GENRE
-            ? state.films
-            : state.films.filter((film) => film.genre === genre);
-      })
       .addCase(getFilmList.pending, (state) => {
         state.isLoading = true;
       })
@@ -54,3 +55,5 @@ export const filmsData = createSlice({
       });
   },
 });
+
+export const { getFilmsByGenre } = filmsData.actions;
