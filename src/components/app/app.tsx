@@ -5,7 +5,7 @@ import MyListPage from '../../pages/my-list-page/my-list-page';
 import PlayerPage from '../../pages/player-page/player-page';
 import SignInPage from '../../pages/sign-in-page/sign-in-page';
 import ErrorPage from '../../pages/error-page/error-page';
-import PrivateRoute from '../privat-route/privat-route';
+import PrivateRoute from '../privat-route/private-route';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppRoute } from '../../const';
