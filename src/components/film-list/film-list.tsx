@@ -45,7 +45,7 @@ function FilmList({
           key={card.id}
           filmPreview={card}
           isPlayerActive={activeFilmCard === card.id}
-          onHover={handleActiveFilmCard}
+          handleCardHover={handleActiveFilmCard}
         />
       ))}
     </div>
