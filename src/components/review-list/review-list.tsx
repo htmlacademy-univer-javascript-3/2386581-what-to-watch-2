@@ -2,7 +2,7 @@ import Loader from '../loader/loader';
 
 import React, { useLayoutEffect } from 'react';
 import type { Review } from '../../types';
-import { formatDate } from '../../utils/formatDate';
+import { formatDate } from '../../utils/format-date';
 import { useAppSelector, useAppDispatch } from '../../hooks/store';
 import { getReviews } from '../../store/api-actions';
 import { getReviews as getReviewsState} from '../../store/main-film-data/selectors';

@@ -6,13 +6,13 @@ import VideoPlayer from '../video-player/video-player';
 type CardItemProps = {
   filmPreview: FilmPreview;
   isPlayerActive: boolean;
-  handleCardHover: (id: string) => void;
+  onCardHover: (id: string) => void;
 };
 
 function CardItem({
   filmPreview,
   isPlayerActive,
-  handleCardHover,
+  onCardHover,
 }: CardItemProps): JSX.Element {
   const { id, previewImage, previewVideoLink, name } = filmPreview;
 
@@ -20,8 +20,8 @@ function CardItem({
     <article
       data-testid="card-item"
       className="small-film-card catalog__films-card"
-      onMouseOver={() => handleCardHover(id)}
-      onMouseLeave={() => handleCardHover('')}
+      onMouseOver={() => onCardHover(id)}
+      onMouseLeave={() => onCardHover('')}
     >
       <Link
         to={AppRoute.Movie.replace(':id', id)}

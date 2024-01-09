@@ -97,12 +97,14 @@ export const addReview = createAsyncThunk<
   }
 >(
   '/comments/addReview',
-  async ({ comment, rating, filmId }, { extra: api }) =>
-    await api.post(APIRoute.Reviews.replace(':id', filmId), {
+  async ({ comment, rating, filmId }, { extra: api }) => {
+    const { data } = await api.post<Review>(APIRoute.Reviews.replace(':id', filmId), {
       comment,
       rating,
-    })
-);
+    });
+
+    return data;
+  });
 
 export const checkAuthAction = createAsyncThunk<
   UserData | null,

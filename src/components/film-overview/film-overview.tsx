@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FilmInfo } from '../../types';
-import { formatRating } from '../../utils/formatRating';
+import { formatRating } from '../../utils/format-rating';
 
 type FilmOverviewProps = Pick<
   FilmInfo,
