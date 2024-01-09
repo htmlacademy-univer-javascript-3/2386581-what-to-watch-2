@@ -9,7 +9,7 @@ type HeaderProps = {
 
 function HeaderComponent({ children, className = '' }: HeaderProps) {
   return (
-    <header className={`page-header ${className}`}>
+    <header data-testid={className} className={`page-header ${className}`}>
       <Logo />
       {children}
 

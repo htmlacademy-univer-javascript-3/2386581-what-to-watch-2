@@ -1,5 +1,5 @@
 import type { FilmInfo } from '../../types';
-import { formatToHoursAndMinutes } from '../../utils/formatToHoursAndMinutes';
+import { formatToHoursAndMinutes } from '../../utils/format-to-hours-and-minutes';
 import React from 'react';
 
 type FilmDetailsProps = Pick<

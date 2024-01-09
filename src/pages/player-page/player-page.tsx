@@ -10,7 +10,7 @@ import { getFilmInfo } from '../../store/api-actions';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { AppRoute } from '../../const';
-import { formatRemainingTime } from '../../utils/formatRemainingTime';
+import { formatRemainingTime } from '../../utils/format-remaining-time';
 
 function PlayerPage(): JSX.Element {
   const { id } = useParams();
